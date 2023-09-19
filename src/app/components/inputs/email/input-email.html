@@ -1,0 +1,8 @@
+<mat-form-field class="default-input" [formGroup]="form" #field appearance="outline">
+    <mat-label>{{ label }}</mat-label>
+    <input matInput [placeholder]="placeholder" [formControlName]="name" 
+        [readonly]="readonly" [type]="'text'" #text>
+    <mat-icon matPrefix *ngIf="preFixIcon">{{ preFixIcon }}</mat-icon>
+    <mat-hint *ngIf="hint" [innerHTML]="hint"></mat-hint>
+    <!-- <mat-error *ngIf="hasError('required')">AAA</mat-error> -->
+</mat-form-field>
