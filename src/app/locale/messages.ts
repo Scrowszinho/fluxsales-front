@@ -1,5 +1,6 @@
+declare var require: any
 export function getMessage(key : string, subkey : string | null = null) : string {
-    const messages = require(`./messages/locale.pt.json`);
+    const messages = require('./messages/locale.pt.json');
     let message = messages[key];
     if(subkey){
         message = messages[key][subkey];

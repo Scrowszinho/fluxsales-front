@@ -1,0 +1,33 @@
+<header class="app-header">
+  <div class="app-header__empty-area"></div>
+  <div class="app-header__container">
+    <div class="logo-area">
+      <img src="../../../assets/images/logo/logo.png" alt="logo pequena" />
+    </div>
+    <div class="search-area"></div>
+    <div class="user-area" *ngIf="true">
+      <a href="" class="link-area">
+        {{ 'label.Explore' | translate }}
+      </a>
+      <a href="" class="link-area">
+        {{ 'label.Status' | translate }}
+      </a>
+      <a href="" class="link-area">
+        {{ 'label.Activy' | translate }}
+      </a>
+      <a href="" class="link-area activate">
+        {{ 'label.Enter' | translate }}
+      </a>
+      <a href="" class="link-area activate-out">
+        {{ 'label.Create_account' | translate }}
+      </a>
+      <a href="" class="icon" *ngIf="false">
+        <mat-icon>gavel</mat-icon>
+        <mat-icon *ngIf="false">add</mat-icon>
+      </a>
+      <a href="" class="icon-user" *ngIf="false">
+        <mat-icon>person</mat-icon>
+      </a>
+    </div>
+  </div>
+</header>

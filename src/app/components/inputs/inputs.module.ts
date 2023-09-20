@@ -22,4 +22,4 @@ import { MatIconModule } from '@angular/material/icon';
   ],
   exports: [InputPasswordComponent, InputEmailComponent, InputTextComponent],
 })
-export class InputPasswordModule {}
+export class InputsModule {}

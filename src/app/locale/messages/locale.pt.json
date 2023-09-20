@@ -1,3 +1,10 @@
 {
-    "label.title":"Teste"
+    "label.title":"Teste",
+    "label.Explore": "Explorar",
+    "label.Status": "Status",
+    "label.Create": "Criar",
+    "label.Enter": "Entrar",
+    "label.Create_account": "Criar conta",
+    "label.usuario": "Criar",
+    "label.Activy": "Atividades"
 }

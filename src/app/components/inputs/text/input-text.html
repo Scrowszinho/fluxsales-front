@@ -1,4 +1,4 @@
-<mat-form-field class="default-input" [formGroup]="form" #field appearance="outline">
+<mat-form-field class="default-input" [formGroup]="form" #field [appearance]="appearance">
     <mat-label>{{ label }}</mat-label>
     <input matInput [placeholder]="placeholder" [formControlName]="name" 
         [readonly]="readonly" [type]="'text'" #text>
