@@ -5,6 +5,7 @@ import { MatFormFieldAppearance } from '@angular/material/form-field';
 @Component({
   selector: 'input-text',
   templateUrl: './input-text.html',
+  styleUrls: ['../inputs.scss']
 })
 export class InputTextComponent {
 
@@ -16,6 +17,8 @@ export class InputTextComponent {
     @Input() hint : string;
     @Input() appearance : MatFormFieldAppearance = 'outline';
     @Input() preFixIcon  : string;
+    @Input() suFixIcon  : string;
+    @Input() type: 'rounded-field' | 'normal' = 'rounded-field'
     
     hasError(error){
         return this.form.hasError(error, [this.name]);

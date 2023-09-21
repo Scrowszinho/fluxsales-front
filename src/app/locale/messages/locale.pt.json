@@ -10,5 +10,12 @@
     "label.Help": "Ajuda",
     "label.Region": "Região",
     "label.usuario": "Criar",
-    "label.Activy": "Atividades"
+    "label.Login": "Login",
+    "label.Email": "Email",
+    "label.Password": "Senha",
+    "label.or": "ou",
+    "label.Recover_password": "Recuperar senha",
+    "label.Activy": "Atividades",
+    "text.Login_aside": "Negocie os melhores produtos nos melhores valores com a gente",
+    "text.Login_subtitle": "Siga os proximos passos para logar no sistema"
 }

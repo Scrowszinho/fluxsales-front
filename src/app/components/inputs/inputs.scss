@@ -1,0 +1,20 @@
+@import "../../../assets/styles/colors.scss";
+
+.rounded-field {
+	::ng-deep{
+		.mat-form-field{
+			width: 100%;
+		}
+		.mat-mdc-form-field-focus-overlay {
+			background-color: unset;
+		}
+		.mdc-text-field--filled:not(.mdc-text-field--disabled) {
+			background-color: unset;
+			border: 1px solid #F0F0F0;
+			border-radius: 30px;
+		}
+		.mdc-line-ripple {
+			display: none;
+		}
+	}
+}

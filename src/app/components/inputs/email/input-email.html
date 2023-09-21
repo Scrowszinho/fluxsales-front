@@ -1,8 +1,22 @@
-<mat-form-field class="default-input" [formGroup]="form" #field appearance="outline">
+  <mat-form-field
+    class="default-input"
+    [formGroup]="form"
+    #field
+    [ngClass]="{'rounded-field': type === 'rounded-field' }"
+    style="width: 100%;"
+    appearance="fill"
+  >
     <mat-label>{{ label }}</mat-label>
-    <input matInput [placeholder]="placeholder" [formControlName]="name" 
-        [readonly]="readonly" [type]="'text'" #text>
+    <input
+      matInput
+      [placeholder]="placeholder"
+      [formControlName]="name"
+      [readonly]="readonly"
+      [type]="'text'"
+      #text
+    />
     <mat-icon matPrefix *ngIf="preFixIcon">{{ preFixIcon }}</mat-icon>
+    <mat-icon matSuffix *ngIf="suFixIcon">{{ suFixIcon }}</mat-icon>
     <mat-hint *ngIf="hint" [innerHTML]="hint"></mat-hint>
     <!-- <mat-error *ngIf="hasError('required')">AAA</mat-error> -->
-</mat-form-field>
+  </mat-form-field>

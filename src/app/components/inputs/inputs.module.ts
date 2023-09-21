@@ -6,9 +6,11 @@ import { InputEmailComponent } from './email/input-email.component';
 import { InputTextComponent } from './text/input-text.component';
 import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   imports: [
+    CommonModule,
     ReactiveFormsModule,
     MatInputModule,
     FormsModule,

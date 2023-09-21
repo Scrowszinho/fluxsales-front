@@ -1,0 +1,35 @@
+<div class="app-login">
+  <div class="app-login__aside">
+    <h1>{{ ("text.Login_aside" | translate).toUpperCase() }}</h1>
+  </div>
+  <div class="app-login__form">
+    <img
+      class="logo"
+      src="../../../assets/images/logo/logo.png"
+      alt="logo-pequena"
+    />
+    <h1>{{ "label.Login" | translate }}</h1>
+    <h2>{{ "text.Login_subtitle" | translate }}</h2>
+    <form class="form">
+      <input-email
+        [suFixIcon]="'email'"
+        [type]="'rounded-field'"
+        [label]="'label.Email' | translate"
+        [form]="form"
+        name="email"
+      ></input-email>
+      <input-password
+        [label]="'label.Password' | translate"
+        [form]="form"
+        name="password"
+      ></input-password>
+      <span class="recover-password">{{
+        "label.Recover_password" | translate
+      }}</span>
+      <button class="button">
+        <span>{{ "label.Login" | translate }}</span>
+      </button>
+    </form>
+    <span class="spacer">{{ "label.or" | translate }}</span>
+  </div>
+</div>
