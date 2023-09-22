@@ -15,10 +15,10 @@
       <a href="" class="link-area">
         {{ 'label.Activy' | translate }}
       </a>
-      <a href="" class="link-area activate">
+      <a (click)="routeTo('signin')" class="link-area activate">
         {{ 'label.Enter' | translate }}
       </a>
-      <a href="" class="link-area activate-out">
+      <a (click)="routeTo('signout')" class="link-area activate-out">
         {{ 'label.Create_account' | translate }}
       </a>
       <a href="" class="icon" *ngIf="false">

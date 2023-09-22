@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-signin',
@@ -10,7 +11,8 @@ export class SigninComponent {
 
   form!: FormGroup;
   constructor (
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private router: Router
   ) {}
 
   ngOnInit() {
@@ -22,6 +24,10 @@ export class SigninComponent {
       'email': ['', [Validators.required, Validators.email]],
       'password': ['', [Validators.required]],
     });
+  }
+
+  createAccount(): void {
+    this.router.navigate(['login/signout']);
   }
 
 }

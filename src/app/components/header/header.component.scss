@@ -41,6 +41,7 @@
         text-decoration: none;
         font: normal normal 600 16px/16px "Inclusive Sans";
         color: $default-grey-medium;
+        cursor: pointer;
         &.activate {
           border-radius: 20px;
           padding: 8px 20px;

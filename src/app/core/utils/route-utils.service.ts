@@ -5,13 +5,13 @@ import { Router } from '@angular/router';
 export class RouteUtilsService {
     constructor( private route: Router ) {}
     
-    static disableFooterRoutes = ['/login', '/signup'];
-    static disableHeaderRoutes = ['/login', '/signup'];
+    static disableFooterRoutes = ['/signout', '/signin'];
+    static disableHeaderRoutes = ['/signout', '/signin'];
     
     shouldEnableFooter(): boolean {
         let enable = true;
         RouteUtilsService.disableFooterRoutes.forEach(element => {
-            if( element === this.route.url ) enable = false;
+            if( this.route.url.includes(element) ) enable = false;
         });
         return enable
     }
@@ -19,7 +19,7 @@ export class RouteUtilsService {
     shouldEnableHeader(): boolean {
         let enable = true;
         RouteUtilsService.disableHeaderRoutes.forEach(element => {
-            if( element === this.route.url ) enable = false;
+            if( this.route.url.includes(element) ) enable = false;
         });
         return enable
     }
