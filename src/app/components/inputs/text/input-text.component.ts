@@ -18,8 +18,9 @@ export class InputTextComponent {
     @Input() appearance : MatFormFieldAppearance = 'outline';
     @Input() preFixIcon  : string;
     @Input() suFixIcon  : string;
-    @Input() type: 'rounded-field' | 'normal' = 'rounded-field'
-    
+    @Input() typee: 'rounded-field' | 'normal' = 'rounded-field'
+    @Input() type: 'text' | 'email' | 'password' = 'text';
+
     hasError(error){
         return this.form.hasError(error, [this.name]);
     }

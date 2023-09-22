@@ -1,1 +1,68 @@
-<p>signup works!</p>
+<div class="app-login">
+  <div class="app-login__aside">
+    <div class="container">
+      <h1 class="aside-title">
+        {{ ("text.Login_aside" | translate).toUpperCase() }}
+      </h1>
+      <div class="create-account-area">
+        <h2 class="create-text">{{ "label.Have_account" | translate }}</h2>
+        <span (click)="createAccount()" class="create-button">{{
+          "label.Login_now" | translate
+        }}</span>
+      </div>
+    </div>
+  </div>
+  <div class="app-login__form">
+    <div class="container">
+      <div class="title-register">
+        <img
+          class="logo"
+          src="../../../assets/images/logo/logo.png"
+          alt="logo-pequena"
+        />
+        <h1 class="form-title">{{ "label.Register" | translate }}</h1>
+        <h2>{{ "text.Register_subtitle" | translate }}</h2>
+      </div>
+      <form class="form">
+        <span class="form--label">{{ 'label.Name' | translate }}</span>
+        <input-text
+          [form]="form"
+          name="name"
+          [typee]="'rounded-field'"
+          suFixIcon="person"
+        ></input-text>
+        <span class="form--label">{{ 'label.Email' | translate }}</span>
+        <input-email
+          [form]="form"
+          name="email"
+          [typee]="'rounded-field'"
+          suFixIcon="mail"
+        ></input-email>
+        <span class="form--label">{{ 'label.Document' | translate }}</span>
+        <input-text
+          [form]="form"
+          name="document"
+          [typee]="'rounded-field'"
+          suFixIcon="badge"
+        ></input-text>
+        <span class="form--label">{{ 'label.Password' | translate }}</span>
+        <input-password
+          [form]="form"
+          name="password"
+          [typee]="'rounded-field'"
+        ></input-password>
+        <span class="form--label">{{ 'label.Password_confirm' | translate }}</span>
+        <input-text
+          [form]="form"
+          name="passwordConfirm"
+          [typee]="'rounded-field'"
+          [type]="'password'"
+          suFixIcon="lock"
+        ></input-text>
+        <button class="button">
+          <span>{{ "label.Register" | translate }}</span>
+        </button>
+      </form>
+    </div>
+  </div>
+</div>

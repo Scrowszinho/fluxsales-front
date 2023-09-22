@@ -1,6 +1,7 @@
 @import "../../../assets/styles/colors.scss";
 
 .rounded-field {
+	box-sizing: border-box;
 	::ng-deep{
 		.mat-form-field{
 			width: 100%;
@@ -10,11 +11,23 @@
 		}
 		.mdc-text-field--filled:not(.mdc-text-field--disabled) {
 			background-color: unset;
-			border: 1px solid #F0F0F0;
+			border: 3px solid #F0F0F0;
 			border-radius: 30px;
+			height: 48px;
 		}
 		.mdc-line-ripple {
 			display: none;
+		}
+		.mat-mdc-text-field-wrapper:not(.mdc-text-field--outlined) .mat-mdc-form-field-infix {
+			display: flex;
+			align-items: center;
+			padding-top: 0px;
+		}
+		.mat-mdc-form-field-infix {
+			padding-bottom: 12px;
+		}
+		.mat-mdc-form-field-icon-suffix>.mat-icon {
+			padding: 8px 10px 24px;
 		}
 	}
 }

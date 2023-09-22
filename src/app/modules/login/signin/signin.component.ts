@@ -21,8 +21,8 @@ export class SigninComponent {
 
   buildForm(): void {
     this.form = this.formBuilder.group({
-      'email': ['', [Validators.required, Validators.email]],
-      'password': ['', [Validators.required]],
+      'email': ['', [Validators.email]],
+      'password': ['', []],
     });
   }
 

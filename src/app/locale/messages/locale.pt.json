@@ -4,8 +4,11 @@
     "label.Status": "Status",
     "label.Create": "Criar",
     "label.Enter": "Entrar",
+    "label.Name": "Nome",
+    "label.Document": "CPF",
     "label.Create_account": "Criar conta",
     "label.Create_now": "Criar agora",
+    "label.Login_now": "Logar agora",
     "label.Contant": "Contanto",
     "label.Teste": "Teste",
     "label.Help": "Ajuda",
@@ -16,10 +19,14 @@
     "label.Login_with_facebook": "Login com Facebook",
     "label.Email": "Email",
     "label.Password": "Senha",
+    "label.Password_confirm": "Confirme a senha",
+    "label.Register": "Registrar-se",
     "label.No_have_account": "Ainda não tem uma conta ?",
+    "label.Have_account": "Ja não tem uma conta ?",
     "label.or": "ou",
     "label.Recover_password": "Recuperar senha",
     "label.Activy": "Atividades",
     "text.Login_aside": "Negocie os melhores produtos nos melhores valores com a gente",
-    "text.Login_subtitle": "Siga os proximos passos para logar no sistema"
+    "text.Login_subtitle": "Siga os proximos passos para logar no sistema",
+    "text.Register_subtitle": "Siga os proximos passos para se registrar no sistema"
 }

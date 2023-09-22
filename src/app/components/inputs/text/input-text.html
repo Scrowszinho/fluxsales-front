@@ -2,7 +2,7 @@
   class="default-input"
   [formGroup]="form"
   #field
-  [ngClass]="{'rounded-field': type === 'rounded-field' }"
+  [ngClass]="{'rounded-field': typee === 'rounded-field' }"
   style="width: 100%"
   appearance="fill"
 >
@@ -12,7 +12,7 @@
     [placeholder]="placeholder"
     [formControlName]="name"
     [readonly]="readonly"
-    [type]="'text'"
+    [type]="type"
     #text
   />
   <mat-hint *ngIf="hint" [innerHTML]="hint"></mat-hint>

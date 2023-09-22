@@ -1,0 +1,125 @@
+@import "../../../../assets/styles/colors.scss";
+
+.app-login {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  &__aside {
+    flex-basis: 50%;
+    padding: 16px 0px;
+    background-color: $default-color;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: $default-white;
+    .aside-title {
+      margin-bottom: 166px;
+      font-size: 32px;
+      font-weight: 800;
+    }
+    .container {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0px 64px;
+      height: 800px;
+      box-sizing: border-box;
+      .create-account-area {
+        box-sizing: border-box;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 64px;
+        width: 80%;
+        background-color: white;
+        border-radius: 40px;
+        padding: 8px 12px 8px 64px;
+        .create-text {
+          display: flex;
+          align-items: center;
+          margin: 0px;
+          color: $default-color;
+          font-weight: 800;
+        }
+        .create-button {
+          background-color: $default-color;
+          padding: 10px 22px;
+          border-radius: 40px;
+          color: $default-white;
+          font-weight: 800;
+          cursor: pointer;
+          transition: 0.3s;
+          &:hover {
+            background-color: unset;
+            border: 1px solid $default-color;
+            color: $default-color;
+          }
+        }
+      }
+    }
+  }
+  &__form {
+    flex-basis: 50%;
+    padding: 16px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    .container {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0px 64px;
+      height: 800px;
+      width: 700px;
+      box-sizing: border-box;
+      .form {
+        width: 600px;
+        &--label {
+          padding: 0px 0px 8px 12px;
+          font-weight: bold;
+          font-size: 16px;
+        }
+        .button {
+          border: none;
+          margin-top: 24px;
+          width: 100%;
+          box-sizing: border-box;
+          height: 51px;
+          color: $default-white;
+          font-weight: 800;
+          background-color: $default-color;
+          padding: 16px 0px;
+          border-radius: 30px;
+          cursor: pointer;
+          transition: 0.3s;
+          &:hover {
+            background-color: unset;
+            border: 1px solid $default-color;
+            color: $default-color;
+          }
+        }
+      }
+      .title-register {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .logo {
+          width: 56px;
+        }
+        .form-title {
+          margin-top: 48px;
+        }
+        h2 {
+          font-weight: 400;
+          color: $default-grey-medium;
+        }
+      }
+    }
+  }
+}
