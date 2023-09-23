@@ -24,16 +24,16 @@
         <h2>{{ "text.Login_subtitle" | translate }}</h2>
       </div>
       <form class="form">
-        <span class="form--label">{{ 'label.Email' | translate }}</span>
         <input-email
           [suFixIcon]="'email'"
+          [label]="'label.Email' | translate"
           [typee]="'rounded-field'"
           [form]="form"
           name="email"
         ></input-email>
-        <span class="form--label">{{ 'label.Password' | translate }}</span>
         <input-password
           [form]="form"
+          [label]="'label.Password' | translate"
           name="password"
           [typee]="'rounded-field'"
         ></input-password>

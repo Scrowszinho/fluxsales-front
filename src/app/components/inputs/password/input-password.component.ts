@@ -4,7 +4,7 @@ import { InputTextComponent } from '../text/input-text.component';
 @Component({
   selector: 'input-password',
   templateUrl: './input-password.html',
-  styleUrls: ['./input-password.scss', '../inputs.scss']
+  styleUrls: ['../inputs.scss']
 })
 export class InputPasswordComponent extends InputTextComponent{
 

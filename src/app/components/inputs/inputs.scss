@@ -1,33 +1,48 @@
 @import "../../../assets/styles/colors.scss";
 
+.default-input {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
 .rounded-field {
 	box-sizing: border-box;
-	::ng-deep{
-		.mat-form-field{
-			width: 100%;
+	.input-area {
+		box-sizing: border-box;
+		position: relative;
+		display: flex;
+		align-items: center;
+		.prefix-icon {
+			padding-left: 12px;
+			position: absolute;
 		}
-		.mat-mdc-form-field-focus-overlay {
-			background-color: unset;
+		.sufix-icon {
+			padding-right: 12px;
+			position: absolute;
+			right: 0px;
 		}
-		.mdc-text-field--filled:not(.mdc-text-field--disabled) {
-			background-color: unset;
-			border: 3px solid #F0F0F0;
-			border-radius: 30px;
-			height: 48px;
+	}
+	.input {
+		border-radius: 40px;
+		height: 40px;
+		width: 100%;
+		font-size: 16px;
+		padding-left: 36px;
+		border: 3px solid $default-grey;
+		&:focus {
+			outline: none;
+			border-color: $default-color;
 		}
-		.mdc-line-ripple {
-			display: none;
-		}
-		.mat-mdc-text-field-wrapper:not(.mdc-text-field--outlined) .mat-mdc-form-field-infix {
-			display: flex;
-			align-items: center;
-			padding-top: 0px;
-		}
-		.mat-mdc-form-field-infix {
-			padding-bottom: 12px;
-		}
-		.mat-mdc-form-field-icon-suffix>.mat-icon {
-			padding: 8px 10px 24px;
-		}
+	}
+	.hint {
+		padding-left: 12px;
+		margin-top: 12px;
+	}
+	.input-label {
+		margin-top: 12px;
+		padding: 0px 0px 8px 12px;
+		font-weight: bold;
+		font-size: 16px;
 	}
 }

@@ -1,22 +1,26 @@
-  <mat-form-field
-    class="default-input"
-    [formGroup]="form"
-    #field
-    [ngClass]="{'rounded-field': typee === 'rounded-field' }"
-    style="width: 100%;"
-    appearance="fill"
-  >
-    <mat-label>{{ label }}</mat-label>
+<form
+  class="default-input"
+  [formGroup]="form"
+  #field
+  [ngClass]="{'rounded-field': typee === 'rounded-field' }"
+  style="width: 100%"
+>
+  <mat-label class="input-label" *ngIf="label">{{ label }}</mat-label>
+  <div class="input-area">
+    <mat-icon class="prefix-icon" *ngIf="preFixIcon">{{ preFixIcon }}</mat-icon>
     <input
       matInput
+      [style.padding-left]="preFixIcon ? '36px' : '16px'"
+      [style.padding-right]="suFixIcon ? '36px' : '16px'"
+      class="input"
       [placeholder]="placeholder"
       [formControlName]="name"
       [readonly]="readonly"
-      [type]="'text'"
+      [type]="'email'"
       #text
     />
-    <mat-icon matPrefix *ngIf="preFixIcon">{{ preFixIcon }}</mat-icon>
-    <mat-icon matSuffix *ngIf="suFixIcon">{{ suFixIcon }}</mat-icon>
-    <mat-hint *ngIf="hint" [innerHTML]="hint"></mat-hint>
-    <!-- <mat-error *ngIf="hasError('required')">AAA</mat-error> -->
-  </mat-form-field>
+    <mat-icon class="sufix-icon" *ngIf="suFixIcon">{{ suFixIcon }}</mat-icon>
+  </div>
+  <span class="hint" *ngIf="hint" [innerHTML]="hint"></span>
+  <!-- <mat-error *ngIf="hasError('required')">AAA</mat-error> -->
+</form>
