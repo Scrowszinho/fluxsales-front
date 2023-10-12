@@ -3,4 +3,12 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    width: 100%;
+    height: 100%;
+    .main-content {
+        width: 100%;
+        box-sizing: border-box;
+        height: 100%;
+        padding: 44px 44px 0px 44px;
+    }
 }

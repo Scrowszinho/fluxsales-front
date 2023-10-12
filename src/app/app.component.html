@@ -1,5 +1,7 @@
 <div class="app-container">
     <app-header *ngIf="routeUtil.shouldEnableHeader()"></app-header>
-    <router-outlet></router-outlet>
+    <div class="main-content">
+        <router-outlet></router-outlet>
+    </div>
     <app-footer *ngIf="routeUtil.shouldEnableFooter()"></app-footer>
 </div>

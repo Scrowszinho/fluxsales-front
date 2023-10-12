@@ -1,0 +1,24 @@
+<div class="home-card">
+    <div class="home-card__header">
+        <mat-icon class="icon">more_horiz</mat-icon>
+    </div>
+    <div class="home-card__body">
+        <img class="image" src="../../../assets/images/teste.png" alt="">
+    </div>
+    <div class="home-card__footer">
+        <h1 class="title">Teste Title</h1>
+        <div class="row">
+            <h2 class="last-price">{{ 'label.last_Bid' | translate }}</h2>
+            <h3 class="price">{{ 100.00 | currency:'BRL' }}</h3>
+        </div>
+        <div class="row-button">
+            <button class="bid-button">
+                <span>{{ 'label.Bid_now' | translate }}</span>
+            </button>
+            <div class="bids-now">
+                <mat-icon class="icon">gavel</mat-icon>
+                <span class="quantity">0</span>
+            </div>
+        </div>
+    </div>
+</div>

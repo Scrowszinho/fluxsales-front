@@ -1,0 +1,78 @@
+@import "../../../assets/styles/colors.scss";
+
+.home-card {
+  box-sizing: border-box;
+  font-family: "Inclusive Sans";
+  padding: 12px;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 360px;
+  border: 1px solid $default-grey;
+  &__header {
+    display: flex;
+    justify-content: flex-end;
+    .icon {
+      cursor: pointer;
+    }
+  }
+  &__body {
+    .image {
+      border-radius: 12px;
+      height: 200px;
+    }
+  }
+  &__footer {
+    .title {
+      font-weight: 800;
+      margin: 0px;
+    }
+    .row {
+      display: flex;
+      align-items: center;
+      .last-price {
+        color: $default-grey-medium;
+        font-family: 'Roboto';
+        font-size: 14px;
+        margin: 0px;
+      }
+
+      .price {
+        color: black;
+        font-weight: 800;
+        font-size: 14px;
+        margin: 0px;
+        padding-left: 12px;
+      }
+    }
+
+    .row-button {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        .bid-button {
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            padding: 10px 14px;
+            background-color: $default-color;
+            color: $default-white;
+            font-weight: 800;
+        }
+        .bids-now {
+            display: flex;
+            align-items: center;
+            .icon {
+                font-size: 20px;
+            }
+            .quantity {
+                font-size: 14px;
+                color: black;
+                font-weight: 800;
+                padding-left: 4px;
+            }
+        }
+    }
+  }
+}
