@@ -1,0 +1,12 @@
+.app-home {
+    &__title {
+        display: flex;
+        flex-direction: column;
+        margin: 16px 0px;
+    }
+    &__body {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(20%, 1fr));
+        gap: 64px;
+    }
+}
