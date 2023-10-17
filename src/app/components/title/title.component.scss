@@ -1,7 +1,11 @@
 @import "../../../assets/styles/fonts.scss";
+@import "../../../assets/styles/media-query.scss";
 
 .app-title {
     display: flex;
     font-size: $default-title;
     font-weight: 800;
+    @media (max-height: $media-mobile-width) {
+        font-size: $default-text-xg;
+    }
 }

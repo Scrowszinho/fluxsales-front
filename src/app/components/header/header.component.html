@@ -6,7 +6,7 @@
     </div>
     <div class="search-area"></div>
     <div class="user-area" *ngIf="true">
-      <a href="" class="link-area">
+      <a (click)="routeTo('explore')" class="link-area">
         {{ 'label.Explore' | translate }}
       </a>
       <a href="" class="link-area">
@@ -15,10 +15,10 @@
       <a href="" class="link-area">
         {{ 'label.Activy' | translate }}
       </a>
-      <a (click)="routeTo('signin')" class="link-area activate">
+      <a (click)="routeTo('login/signin')" class="link-area activate">
         {{ 'label.Enter' | translate }}
       </a>
-      <a (click)="routeTo('signout')" class="link-area activate-out">
+      <a (click)="routeTo('login/signout')" class="link-area activate-out">
         {{ 'label.Create_account' | translate }}
       </a>
       <a href="" class="icon" *ngIf="false">

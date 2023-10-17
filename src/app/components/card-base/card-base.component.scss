@@ -1,6 +1,11 @@
+@import "../../../assets/styles/media-query.scss";
+
 .card-base {
     width: 100%;
     height: 100%;
     box-sizing: border-box;
     padding: 44px 44px 0px 44px;
+    @media (max-width: $media-mobile-width) {
+        padding: 24px 24px 0px 24px;
+    }
 }

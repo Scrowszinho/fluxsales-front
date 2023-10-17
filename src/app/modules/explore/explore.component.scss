@@ -1,0 +1,35 @@
+@import "../../../assets/styles/media-query.scss";
+@import "../../../assets/styles/fonts.scss";
+
+.app-explore {
+    &__title {
+        display: flex;
+        flex-direction: column;
+        margin: 16px 0px;
+        @media (max-height: $media-mobile-width) {
+            display: flex;
+            align-items: center;
+        }
+    }
+    &__body {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(20%, 1fr));
+        gap: 64px;
+
+        @media (max-height: $media-mobile-width) {
+            grid-template-columns: repeat(auto-fill, minmax(50%, 1fr));
+        }
+
+        @media (min-width: $media-medium-width) {
+            grid-template-columns: repeat(auto-fill, minmax(25%, 1fr));
+        }
+
+        @media (min-width: $media-large-width) {
+            grid-template-columns: repeat(auto-fill, minmax(20%, 1fr));
+        }
+
+        @media (max-width: $media-mobile-width) {
+            grid-template-columns: repeat(auto-fill, minmax(50%, 1fr));
+        }
+    }
+}

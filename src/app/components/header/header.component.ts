@@ -13,7 +13,7 @@ export class HeaderComponent {
   ) {}
 
   routeTo(route: string): void {
-    this.router.navigate([`login/${route}`])
+    this.router.navigate([`${route}`])
   }
 
 }
