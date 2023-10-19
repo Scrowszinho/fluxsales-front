@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Output } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-card',
@@ -7,4 +8,11 @@ import { Component } from '@angular/core';
 })
 export class CardComponent {
 
+  // @Output() productId = new EventEmitter();
+
+  constructor(private _route: Router) {}
+
+  goToProduct(id: number): void {
+    this._route.navigate(['/product/' + id]);
+  }
 }

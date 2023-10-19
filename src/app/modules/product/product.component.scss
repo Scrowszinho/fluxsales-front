@@ -1,0 +1,87 @@
+@import "../../../assets/styles/colors.scss";
+@import "../../../assets/styles/fonts.scss";
+@import "../../../assets/styles/media-query.scss";
+@import "../../../assets/styles/styles.scss";
+
+.app-product {
+  display: flex;
+  &__images {
+    flex-basis: 70%;
+    &--image-area {
+        display: flex;
+        align-items: center;
+      .container {
+        height: 718px;
+        width: 960px;
+        position: relative;
+      }
+      .image {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        border-radius: 20px;
+      }
+      .buttons-container {
+        position: absolute;
+        top: 16px;
+        right: 24px;
+        display: flex;
+      }
+      .button-bids {
+        margin-right: 20px;
+        .bids {
+          padding-left: 8px;
+          font-weight: 800;
+          font-size: $default-text-p;
+        }
+      }
+      .button-options {
+        border-radius: 100%;
+        display: flex;
+        align-items: center;
+        padding: 8px 8px;
+        .icon {
+          font-size: $default-text-xg;
+        }
+      }
+    }
+  }
+
+  &__body {
+    flex-basis: 30%;
+    padding-right: 32px;
+    &--title {
+        display: flex;
+        flex-direction: column;
+        .text {
+          font-size: $default-text-m;
+        }
+        .value {
+          padding-left: 12px;
+          font-size: $default-text-m;
+          font-weight: 800;
+        }
+    }
+    &--description {
+      margin-top: 44px;
+      .description {
+        font-weight: 400;
+        font-size: $default-text-m;
+      }
+      .semi-details {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        .detail {
+          margin-top: 55px;
+          &--title {
+            margin-bottom: 0px;
+            font-weight: 500;
+          }
+          &--value {
+            font-size: $default-text-p;
+          }
+        }
+      }
+    }
+  }
+}

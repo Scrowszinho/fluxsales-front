@@ -12,7 +12,7 @@
             <h3 class="price">{{ 100.00 | currency:'BRL' }}</h3>
         </div>
         <div class="row-button">
-            <button class="bid-button">
+            <button class="bid-button" (click)="goToProduct(1)">
                 <span>{{ 'label.Bid_now' | translate }}</span>
             </button>
             <div class="bids-now">
