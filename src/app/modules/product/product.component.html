@@ -1,56 +1,78 @@
 <card-base>
   <div class="app-product">
-    <div class="app-product__images">
-      <div class="app-product__images--image-area">
-        <div class="container">
-          <img src="../../../assets/images/teste.png" class="image" alt="" />
-          <div class="buttons-container">
-            <button class="button-white button-bids">
-              <mat-icon>gavel</mat-icon>
-              <span class="bids">68</span>
-            </button>
-            <button class="button-white button-options">
-              <mat-icon class="icon">more_horiz</mat-icon>
-            </button>
+    <div class="row">
+      <div class="app-product__images">
+        <div class="app-product__images--image-area">
+          <div class="container">
+            <img src="../../../assets/images/teste.png" class="image" alt="" />
+            <div class="buttons-container">
+              <button class="button-white button-bids">
+                <mat-icon>gavel</mat-icon>
+                <span class="bids">68</span>
+              </button>
+              <button class="button-white button-options">
+                <mat-icon class="icon">more_horiz</mat-icon>
+              </button>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-    <div class="app-product__body">
-      <div class="app-product__body--title">
-        <app-title [title]="'Teste'"></app-title>
-        <div class="subtitle">
-          <span class="text">{{ "label.On_sale_by" | translate }}</span>
-          <b class="value">{{ 100 | currency : "BRL" }}</b>
-        </div>
-      </div>
-      <div class="app-product__body--description">
-        <p class="description">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, porro
-          adipisci quia accusamus consectetur vel, commodi quo accusantium,
-          necessitatibus nesciunt vitae quaerat totam tempora ab distinctio ea a
-          id dolorum?
-        </p>
-        <div class="semi-details">
-          <div class="detail">
-            <h1 class="detail--title">
-              {{ "label.Creation_date" | translate }}
-            </h1>
-            <h2 class="detail--value">{{ date | date }}</h2>
-          </div>
-          <div class="detail">
-            <h1 class="detail--title">{{ "label.Bid_minim" | translate }}</h1>
-            <h2 class="detail--value">{{ 100 | currency : "BRL" }}</h2>
+      <div class="app-product__body">
+        <div class="app-product__body--title">
+          <app-title [title]="'Teste'"></app-title>
+          <div class="subtitle">
+            <span class="text">{{ "label.On_sale_by" | translate }}</span>
+            <b class="value">{{ 100 | currency : "BRL" }}</b>
           </div>
         </div>
-      </div>
-      <div class="app-product__body--details">
-        <div class="tabs">
-          <mat-tab-group>
-            <mat-tab label="First"> Content 1 </mat-tab>
-            <mat-tab label="Second"> Content 2 </mat-tab>
-            <mat-tab label="Third"> Content 3 </mat-tab>
-          </mat-tab-group>
+        <div class="app-product__body--description">
+          <p class="description">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias,
+            porro adipisci quia accusamus consectetur vel, commodi quo
+            accusantium, necessitatibus nesciunt vitae quaerat totam tempora ab
+            distinctio ea a id dolorum?
+          </p>
+          <div class="semi-details">
+            <div class="detail">
+              <h1 class="detail--title">
+                {{ "label.Bids_final_date" | translate }}
+              </h1>
+              <div class="row">
+                <div class="icon">
+                  <mat-icon class="detail--icon">today</mat-icon>
+                </div>
+                <h2 class="detail--value">{{ date | date }}</h2>
+              </div>
+            </div>
+            <div class="detail">
+              <h1 class="detail--title">{{ "label.Bid_minim" | translate }}</h1>
+              <div class="row">
+                <div class="icon">
+                  <mat-icon class="detail--icon">toll</mat-icon>
+                </div>
+                <h2 class="detail--value">{{ 100 | currency : "BRL" }}</h2>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="app-product__body--details">
+          <div class="tabs">
+            <mat-tab-group class="default-tabs">
+              <mat-tab [label]="'label.Details' | translate">
+                <div class="tab-details">
+                  <div class="tab-details__owner">
+                    <h3 class="title">{{ "label.Owner" | translate }}</h3>
+                    <div class="row">
+                      <div class="row--icon">
+                        <mat-icon class="icon">person</mat-icon>
+                      </div>
+                      <span class="name">{{ "Ruan" }}</span>
+                    </div>
+                  </div>
+                  <div class="tab-details__tags"></div></div
+              ></mat-tab>
+            </mat-tab-group>
+          </div>
         </div>
       </div>
     </div>

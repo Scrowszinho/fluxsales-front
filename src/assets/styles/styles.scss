@@ -7,3 +7,34 @@
   border-radius: 100px;
   justify-content: space-between;
 }
+
+.row {
+  display: flex;
+  align-items: center;
+}
+
+.default-tabs {
+  ::ng-deep {
+    .mat-mdc-tab {
+      flex-grow: unset !important;
+    }
+    .mat-mdc-tab.mdc-tab--active .mdc-tab__text-label {
+      color: black !important;
+    }
+    .mdc-tab-indicator .mdc-tab-indicator__content {
+      border-color: black !important;
+    }
+    .mat-mdc-tab.mdc-tab--active:hover .mdc-tab-indicator__content--underline {
+      border-color: black !important;
+    }
+    .mat-mdc-tab.mdc-tab--active:focus .mdc-tab-indicator__content--underline {
+      background-color: black !important;
+    }
+    .mat-tab-label:hover:not(.mat-tab-disabled) {
+      background-color: unset !important;
+    }
+    .mat-tab-label-active {
+      background-color: unset;
+     }
+  }
+}
