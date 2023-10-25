@@ -15,7 +15,7 @@
       <a href="" class="link-area">
         {{ 'label.Activy' | translate }}
       </a>
-      <a (click)="routeTo('login/signin')" class="link-area activate">
+      <a (click)="auth0.loginWithRedirect()" class="link-area activate">
         {{ 'label.Enter' | translate }}
       </a>
       <a (click)="routeTo('login/signout')" class="link-area activate-out">
