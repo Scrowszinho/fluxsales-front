@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, ViewChildren } from '@angular/core';
 import { RouteUtilsService } from './core/utils/route-utils.service';
+import { HeaderComponent } from './components/header/header.component';
 
 @Component({
   selector: 'app-root',
@@ -7,7 +8,13 @@ import { RouteUtilsService } from './core/utils/route-utils.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+  @ViewChildren('header') header!: HeaderComponent;
+
   constructor (
     public routeUtil: RouteUtilsService
   ) {}
+
+  closeMenu(): void {
+    this.header.shouldOpenDetails = false;
+  }
 }

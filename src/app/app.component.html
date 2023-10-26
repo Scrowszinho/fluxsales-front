@@ -1,7 +1,9 @@
 <div class="app-container">
-    <app-header *ngIf="routeUtil.shouldEnableHeader()"></app-header>
-    <div class="main-content">
-        <router-outlet></router-outlet>
-    </div>
-    <app-footer *ngIf="routeUtil.shouldEnableFooter()"></app-footer>
+    <app-header #header *ngIf="routeUtil.shouldEnableHeader()"></app-header>
+    <a (click)="closeMenu()">
+        <div class="main-content">
+            <router-outlet></router-outlet>
+        </div>
+        <app-footer *ngIf="routeUtil.shouldEnableFooter()"></app-footer>
+    </a>
 </div>
