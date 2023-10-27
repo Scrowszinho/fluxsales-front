@@ -1,0 +1,17 @@
+version: "3.7"
+
+services:
+    fluxsales-front:
+        build: .
+        container_name: fluxsales-front
+        command: npm run start
+        restart: unless-stopped
+        tty: true
+        environment:
+            TZ: America/Sao_Paulo
+        working_dir: /var/www/html/fluxsales-front
+        ports:
+            - "4200:4200"
+            - "9880:9880"
+        volumes:
+            - .:/var/www/html/fluxsales-front
