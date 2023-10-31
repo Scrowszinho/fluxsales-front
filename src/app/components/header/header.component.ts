@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { AuthService } from '@auth0/auth0-angular';
 
 @Component({
   selector: 'app-header',
@@ -11,16 +10,14 @@ export class HeaderComponent {
   isAuthenticated = false;
   shouldOpenDetails = false;
   link = '../../../assets/images/icon.png';
-  constructor(private router: Router, public auth0: AuthService) {}
+  constructor(private router: Router) {}
 
   ngOnInit() {
     this.isAuth();
   }
 
   isAuth(): void {
-    this.auth0.isAuthenticated$.subscribe(
-      (response) => (this.isAuthenticated = response)
-    );    
+     
   }
 
   openDetails(): void {
@@ -37,5 +34,9 @@ export class HeaderComponent {
 
   routeTo(route: string): void {
     this.router.navigate([`${route}`]);
+  }
+
+  logout(): void {
+    
   }
 }

@@ -16,21 +16,17 @@
         {{ "label.Activy" | translate }}
       </a>
       <a
-        *ngIf="!isAuthenticated"
-        (click)="auth0.loginWithRedirect()"
         class="link-area activate"
       >
         {{ "label.Enter" | translate }}
       </a>
       <a
-        *ngIf="!isAuthenticated"
         (click)="routeTo('login/signout')"
         class="link-area activate-out"
       >
         {{ "label.Create_account" | translate }}
       </a>
       <a
-        *ngIf="isAuthenticated"
         class="link-area user"
         (click)="openDetails()"
         (mouseenter)="mouseEnter()"
@@ -47,7 +43,7 @@
       </a>
     </div>
     <div class="user-details" *ngIf="shouldOpenDetails">
-      <span class="item" (click)="auth0.logout()">{{ "label.Exit" | translate }}</span>
+      <span class="item" (click)="logout()">{{ "label.Exit" | translate }}</span>
     </div>
   </div>
 </header>
