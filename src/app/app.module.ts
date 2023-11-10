@@ -10,7 +10,6 @@ import { PipesModule } from './pipes/pipes.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
-import { AuthModule } from '@auth0/auth0-angular';
 import { environment } from 'src/environments/environment';
 
 @NgModule({
@@ -28,14 +27,7 @@ import { environment } from 'src/environments/environment';
     FooterModule,
     HeaderModule,
     PipesModule,
-    BrowserAnimationsModule,
-    AuthModule.forRoot({
-      domain: environment.auth0Domain,
-      clientId: environment.auth0ClientId,
-      authorizationParams: {
-        redirect_uri: window.location.origin
-      }
-    })
+    BrowserAnimationsModule
   ],
   bootstrap: [AppComponent]
 })
