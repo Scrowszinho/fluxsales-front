@@ -1,5 +1,6 @@
 export const environment = {
-    apiUrl: '',
-    auth0Domain: 'dev-3yg4atan6fctzshg.us.auth0.com',
-    auth0ClientId: '5FQMuVFkzawsOGDWnNRT1HV0qvHrCbQf',
+    apiUrl: 'http://localhost:3000',
+    keycloakUrl: 'http://localhost:8080',
+    keycloakRealm: 'fluxsales',
+    keycloakClientId: 'fluxsales-front'
 };
