@@ -11,19 +11,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
-import initializeKeycloak from './auth/keycloak';
-import { KeycloakAngularModule, KeycloakService } from 'keycloak-angular';
 
 @NgModule({
   declarations: [AppComponent],
-  providers: [
-    {
-      provide: APP_INITIALIZER,
-      useFactory: initializeKeycloak,
-      multi: true,
-      deps: [KeycloakService],
-    },
-  ],
   imports: [
     BrowserModule,
     CommonModule,
@@ -36,7 +26,6 @@ import { KeycloakAngularModule, KeycloakService } from 'keycloak-angular';
     HeaderModule,
     PipesModule,
     BrowserAnimationsModule,
-    KeycloakAngularModule
   ],
   bootstrap: [AppComponent],
 })
