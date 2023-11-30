@@ -17,16 +17,20 @@
       </a>
       <a
         class="link-area activate"
+        *ngIf="!authService.isUserLogged()"
+        (click)="routeTo('login/signin')"
       >
         {{ "label.Enter" | translate }}
       </a>
       <a
+      *ngIf="!authService.isUserLogged()"
         (click)="routeTo('login/signout')"
         class="link-area activate-out"
       >
         {{ "label.Create_account" | translate }}
       </a>
       <a
+        *ngIf="authService.isUserLogged()"
         class="link-area user"
         (click)="openDetails()"
         (mouseenter)="mouseEnter()"

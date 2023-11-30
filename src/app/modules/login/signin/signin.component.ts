@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { LoginService } from '../login.service';
 
 @Component({
   selector: 'app-signin',
@@ -11,8 +12,9 @@ export class SigninComponent {
 
   form!: FormGroup;
   constructor (
-    private formBuilder: FormBuilder,
-    private router: Router
+    private _formBuilder: FormBuilder,
+    private _router: Router,
+    private _service: LoginService
   ) {}
 
   ngOnInit() {
@@ -20,14 +22,26 @@ export class SigninComponent {
   }
 
   buildForm(): void {
-    this.form = this.formBuilder.group({
-      'email': ['', [Validators.email]],
-      'password': ['', []],
+    this.form = this._formBuilder.group({
+      'email': ['', [Validators.email, Validators.required]],
+      'password': ['', [Validators.required]],
     });
   }
 
   createAccount(): void {
-    this.router.navigate(['login/signout']);
+    this._router.navigate(['login/signout']);
+  }
+
+  doLogin(): void {
+    if(this.form.invalid) return;
+    this._service.authenticate(this.form.getRawValue()).subscribe({
+      next: () => {
+        this._router.navigate(['/']);
+      },
+      error: error => {
+
+      }
+    })
   }
 
 }

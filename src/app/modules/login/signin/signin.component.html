@@ -23,7 +23,7 @@
         <h1 class="form-title">{{ "label.Login" | translate }}</h1>
         <h2>{{ "text.Login_subtitle" | translate }}</h2>
       </div>
-      <form class="form">
+      <div class="form">
         <input-email
           [suFixIcon]="'email'"
           [label]="'label.Email' | translate"
@@ -40,10 +40,10 @@
         <span class="recover-password">{{
           "label.Recover_password" | translate
         }}</span>
-        <button class="button">
+        <button class="button" (click)="doLogin()">
           <span>{{ "label.Login" | translate }}</span>
         </button>
-      </form>
+      </div>
       <span class="spacer">{{ "label.or" | translate }}</span>
       <div class="login-social">
         <button class="login-social__buton">

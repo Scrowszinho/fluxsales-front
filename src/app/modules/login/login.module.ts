@@ -5,6 +5,7 @@ import { PipesModule } from "../../pipes/pipes.module";
 import { SigninComponent } from './signin/signin.component';
 import { SignupComponent } from './signup/signup.component';
 import { InputsModule } from "../../components/inputs/inputs.module";
+import { LoginService } from './login.service';
 
 
 
@@ -13,7 +14,9 @@ import { InputsModule } from "../../components/inputs/inputs.module";
         SigninComponent,
         SignupComponent
     ],
-    providers: [],
+    providers: [
+        LoginService
+    ],
     imports: [
         LoginRoute,
         CommonModule,
