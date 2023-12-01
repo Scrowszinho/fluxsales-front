@@ -10,6 +10,8 @@ import { PipesModule } from './pipes/pipes.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
+import { provideEnvironmentNgxMask } from 'ngx-mask';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 @NgModule({
   declarations: [AppComponent],
@@ -21,10 +23,14 @@ import { HttpClientModule } from '@angular/common/http';
     FormsModule,
     ReactiveFormsModule,
     AppRoutingModule,
+    MatSnackBarModule,
     FooterModule,
     HeaderModule,
     PipesModule,
     BrowserAnimationsModule,
+  ],
+  providers: [
+    provideEnvironmentNgxMask(),
   ],
   bootstrap: [AppComponent],
 })

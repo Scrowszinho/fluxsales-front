@@ -7,12 +7,15 @@ import { InputTextComponent } from './text/input-text.component';
 import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 import { CommonModule } from '@angular/common';
+import { NgxMaskDirective, NgxMaskPipe } from 'ngx-mask';
 
 @NgModule({
   imports: [
     CommonModule,
     ReactiveFormsModule,
     MatInputModule,
+    NgxMaskDirective, 
+    NgxMaskPipe,
     FormsModule,
     MatFormFieldModule,
     MatIconModule,

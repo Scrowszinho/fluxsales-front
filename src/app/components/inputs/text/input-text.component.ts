@@ -15,6 +15,7 @@ export class InputTextComponent {
     @Input() name : string; 
     @Input() readonly : boolean;
     @Input() hint : string;
+    @Input() mask: string;
     @Input() appearance : MatFormFieldAppearance = 'outline';
     @Input() preFixIcon  : string;
     @Input() suFixIcon  : string;

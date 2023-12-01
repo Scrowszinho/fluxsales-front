@@ -6,6 +6,7 @@ import { SigninComponent } from './signin/signin.component';
 import { SignupComponent } from './signup/signup.component';
 import { InputsModule } from "../../components/inputs/inputs.module";
 import { LoginService } from './login.service';
+import { SnackBarService } from 'src/app/components/snackbar/snackbar.service';
 
 
 
@@ -15,6 +16,7 @@ import { LoginService } from './login.service';
         SignupComponent
     ],
     providers: [
+        SnackBarService,
         LoginService
     ],
     imports: [

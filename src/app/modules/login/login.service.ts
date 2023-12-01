@@ -7,6 +7,7 @@ import { Observable, tap } from 'rxjs';
 import { IUserLoged } from 'src/app/interfaces/user.interfaces';
 import { LocalStorageService } from 'src/app/core/utils/local-storage.service';
 import { LocalStorageEnum } from 'src/app/enums/local-storage.enum';
+import { ICreateUser } from './interfaces/signup-interface';
 
 @Injectable()
 export class LoginService {
@@ -25,5 +26,10 @@ export class LoginService {
         );
       })
     );
+  }
+
+  registerUser(user: ICreateUser): Observable<IUserLoged> {
+    const url = environment.apiUrl + apiUrl.user.registerUser;
+    return this._http.post<IUserLoged>(url, user);
   }
 }

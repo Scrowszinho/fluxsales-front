@@ -23,46 +23,65 @@
         <h1 class="form-title">{{ "label.Register" | translate }}</h1>
         <h2>{{ "text.Register_subtitle" | translate }}</h2>
       </div>
-      <form class="form">
-        <span class="form--label">{{ 'label.Name' | translate }}</span>
+      <div class="form">
+        <div class="form--inputs">
+          <span class="form--label">{{ "label.Name" | translate }}</span>
+          <input-text
+            [form]="form"
+            name="name"
+            [typee]="'rounded-field'"
+            suFixIcon="person"
+          ></input-text>
+        </div>
+        <div class="form--inputs">
+          <span class="form--label">{{ "label.Email" | translate }}</span>
+          <input-email
+            [form]="form"
+            name="email"
+            [typee]="'rounded-field'"
+            suFixIcon="mail"
+          ></input-email>
+        </div>
+        <!-- <span class="form--label">{{ 'label.Phone' | translate }}</span>
         <input-text
           [form]="form"
-          name="name"
+          name="phone"
+          mask="(00) 00000-0000"
           [typee]="'rounded-field'"
-          suFixIcon="person"
-        ></input-text>
-        <span class="form--label">{{ 'label.Email' | translate }}</span>
-        <input-email
-          [form]="form"
-          name="email"
-          [typee]="'rounded-field'"
-          suFixIcon="mail"
-        ></input-email>
-        <span class="form--label">{{ 'label.Document' | translate }}</span>
+          suFixIcon="phone"
+        ></input-text> -->
+        <!-- <span class="form--label">{{ 'label.Document' | translate }}</span>
         <input-text
           [form]="form"
           name="document"
           [typee]="'rounded-field'"
+          mask="000-000-000.00"
           suFixIcon="badge"
-        ></input-text>
-        <span class="form--label">{{ 'label.Password' | translate }}</span>
-        <input-password
-          [form]="form"
-          name="password"
-          [typee]="'rounded-field'"
-        ></input-password>
-        <span class="form--label">{{ 'label.Password_confirm' | translate }}</span>
-        <input-text
-          [form]="form"
-          name="passwordConfirm"
-          [typee]="'rounded-field'"
-          [type]="'password'"
-          suFixIcon="lock"
-        ></input-text>
-        <button class="button">
+        ></input-text> -->
+        <div class="form--inputs">
+          <span class="form--label">{{ "label.Password" | translate }}</span>
+          <input-password
+            [form]="form"
+            name="password"
+            [typee]="'rounded-field'"
+          ></input-password>
+        </div>
+        <div class="form--inputs">
+          <span class="form--label">{{
+            "label.Password_confirm" | translate
+          }}</span>
+          <input-text
+            [form]="form"
+            name="passwordConfirm"
+            [typee]="'rounded-field'"
+            [type]="'password'"
+            suFixIcon="lock"
+          ></input-text>
+        </div>
+        <button class="button" (click)="doRegister()">
           <span>{{ "label.Register" | translate }}</span>
         </button>
-      </form>
+      </div>
     </div>
   </div>
 </div>
