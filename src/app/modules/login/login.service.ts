@@ -28,6 +28,11 @@ export class LoginService {
     );
   }
 
+  doGoogleLogin(): Observable<any> {
+    const url = environment.apiUrl + '/auth/google';
+    return this._http.get<any>(url);
+  }
+
   registerUser(user: ICreateUser): Observable<IUserLoged> {
     const url = environment.apiUrl + apiUrl.user.registerUser;
     return this._http.post<IUserLoged>(url, user);

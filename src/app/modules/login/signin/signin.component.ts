@@ -44,4 +44,13 @@ export class SigninComponent {
     })
   }
 
+  doGoogleLogin(): void {
+    this._service.doGoogleLogin().subscribe({
+      next: res => {
+        console.log(res);
+        
+      }
+    })
+  }
+
 }
