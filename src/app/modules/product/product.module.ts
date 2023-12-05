@@ -7,9 +7,11 @@ import { TitleModule } from 'src/app/components/title/title.module';
 import { MatIconModule } from '@angular/material/icon';
 import { PipesModule } from '../../pipes/pipes.module';
 import { MatTabsModule } from '@angular/material/tabs';
+import { ProductService } from './product.service';
 
 @NgModule({
   declarations: [ProductComponent],
+  providers: [ProductService],
   imports: [
     CommonModule,
     TitleModule,

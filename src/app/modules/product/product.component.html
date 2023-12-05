@@ -1,6 +1,6 @@
 <card-base>
-  <div class="app-product">
-    <div class="app-product__details row">
+  <div class="app-product" [ngClass]="{'loading-class': isLoading}">
+    <div class="app-product__details row" *ngIf="!isLoading">
       <div class="app-product__images">
         <div class="app-product__images--image-area">
           <div class="container">
@@ -8,7 +8,7 @@
             <div class="buttons-container">
               <button class="button-white button-bids">
                 <mat-icon>gavel</mat-icon>
-                <span class="bids">68</span>
+                <span class="bids">{{ offer.bids }}</span>
               </button>
               <button class="button-white button-options">
                 <mat-icon class="icon">more_horiz</mat-icon>
@@ -19,18 +19,15 @@
       </div>
       <div class="app-product__body">
         <div class="app-product__body--title">
-          <app-title [title]="'Teste'"></app-title>
+          <app-title [title]="offer.product.name"></app-title>
           <div class="subtitle">
-            <span class="text">{{ "label.On_sale_by" | translate }}</span>
-            <b class="value">{{ 100 | currency : "BRL" }}</b>
+            <span class="text">{{ offer.product.final_value ? "label.Last_bidd" : "label.Salle_by" | translate }}</span>
+            <b class="value">{{ offer.last_bid| currency : "BRL" }}</b>
           </div>
         </div>
         <div class="app-product__body--description">
           <p class="description">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias,
-            porro adipisci quia accusamus consectetur vel, commodi quo
-            accusantium, necessitatibus nesciunt vitae quaerat totam tempora ab
-            distinctio ea a id dolorum?
+            {{ offer.product.description }}
           </p>
           <div class="semi-details">
             <div class="detail">
@@ -41,7 +38,7 @@
                 <div class="icon">
                   <mat-icon class="detail--icon">today</mat-icon>
                 </div>
-                <h2 class="detail--value">{{ date | date }}</h2>
+                <h2 class="detail--value">{{ offer.end_date| date }}</h2>
               </div>
             </div>
             <div class="detail">
@@ -50,7 +47,7 @@
                 <div class="icon">
                   <mat-icon class="detail--icon">toll</mat-icon>
                 </div>
-                <h2 class="detail--value">{{ 100 | currency : "BRL" }}</h2>
+                <h2 class="detail--value">{{ offer.value_interval| currency : "BRL" }}</h2>
               </div>
             </div>
           </div>
@@ -66,7 +63,7 @@
                       <div class="row--icon">
                         <mat-icon class="icon">person</mat-icon>
                       </div>
-                      <span class="name">{{ "Ruan" }}</span>
+                      <span class="name">{{ offer.product.user.name }}</span>
                     </div>
                   </div>
                   <div class="tab-details__tags"></div></div
@@ -76,7 +73,7 @@
         </div>
       </div>
     </div>
-    <div class="app-product__table">
+    <div class="app-product__table" *ngIf="!isLoading">
       
     </div>
   </div>

@@ -6,18 +6,18 @@
         <img class="image" src="../../../assets/images/teste.png" alt="">
     </div>
     <div class="home-card__footer">
-        <h1 class="title">Teste Title</h1>
+        <h1 class="title">{{ offer.product_name }}</h1>
         <div class="row">
             <h2 class="last-price">{{ 'label.last_Bid' | translate }}</h2>
-            <h3 class="price">{{ 100.00 | currency:'BRL' }}</h3>
+            <h3 class="price">{{ offer.last_bid| currency:'BRL' }}</h3>
         </div>
         <div class="row-button">
-            <button class="bid-button" (click)="goToProduct(1)">
+            <button class="bid-button" (click)="goToProduct(offer.id)">
                 <span>{{ 'label.Bid_now' | translate }}</span>
             </button>
             <div class="bids-now">
                 <mat-icon class="icon">gavel</mat-icon>
-                <span class="quantity">0</span>
+                <span class="quantity">{{ offer.bids }}</span>
             </div>
         </div>
     </div>

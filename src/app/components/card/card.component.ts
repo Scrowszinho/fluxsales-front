@@ -1,5 +1,6 @@
-import { Component, Output } from '@angular/core';
+import { Component, Input, Output } from '@angular/core';
 import { Router } from '@angular/router';
+import { IExploreOffers } from 'src/app/modules/explore/interfaces/explore.interfaces';
 
 @Component({
   selector: 'app-card',
@@ -8,7 +9,7 @@ import { Router } from '@angular/router';
 })
 export class CardComponent {
 
-  // @Output() productId = new EventEmitter();
+  @Input() offer : IExploreOffers;
 
   constructor(private _route: Router) {}
 
