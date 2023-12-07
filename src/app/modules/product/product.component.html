@@ -22,7 +22,7 @@
           <app-title [title]="offer.product.name"></app-title>
           <div class="subtitle">
             <span class="text">{{ offer.product.final_value ? "label.Last_bidd" : "label.Salle_by" | translate }}</span>
-            <b class="value">{{ offer.last_bid| currency : "BRL" }}</b>
+            <b class="value">{{ offer.last_bid | currency : "BRL" }}</b>
           </div>
         </div>
         <div class="app-product__body--description">
