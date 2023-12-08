@@ -16,14 +16,6 @@ export class HeaderComponent {
     public authService: AuthService
     ) {}
 
-  ngOnInit() {
-    this.isAuth();
-  }
-
-  isAuth(): void {
-     
-  }
-
   openDetails(): void {
     this.shouldOpenDetails = !this.shouldOpenDetails;
   }

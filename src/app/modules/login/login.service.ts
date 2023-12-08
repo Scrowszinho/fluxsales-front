@@ -8,6 +8,7 @@ import { IUserLoged } from 'src/app/interfaces/user.interfaces';
 import { LocalStorageService } from 'src/app/core/utils/local-storage.service';
 import { LocalStorageEnum } from 'src/app/enums/local-storage.enum';
 import { ICreateUser } from './interfaces/signup-interface';
+import { IDefaultRequest } from 'src/app/interfaces/default-request.interface';
 
 @Injectable()
 export class LoginService {
@@ -16,13 +17,13 @@ export class LoginService {
     private _localStorageService: LocalStorageService
   ) {}
 
-  authenticate(user: ILoginUser): Observable<IUserLoged> {
+  authenticate(user: ILoginUser): Observable<IDefaultRequest<IUserLoged>> {
     const url = environment.apiUrl + apiUrl.user.doLogin;
-    return this._http.post<IUserLoged>(url, user).pipe(
+    return this._http.post<IDefaultRequest<IUserLoged>>(url, user).pipe(
       tap((res) => {
         this._localStorageService.setLocalStorageData(
           LocalStorageEnum.APP_USER_DATA,
-          res
+          res.data
         );
       })
     );
@@ -33,8 +34,8 @@ export class LoginService {
     return this._http.get<any>(url);
   }
 
-  registerUser(user: ICreateUser): Observable<IUserLoged> {
+  registerUser(user: ICreateUser): Observable<IDefaultRequest<IUserLoged>> {
     const url = environment.apiUrl + apiUrl.user.registerUser;
-    return this._http.post<IUserLoged>(url, user);
+    return this._http.post<IDefaultRequest<IUserLoged>>(url, user);
   }
 }

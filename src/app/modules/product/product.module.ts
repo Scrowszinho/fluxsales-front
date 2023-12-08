@@ -8,9 +8,10 @@ import { MatIconModule } from '@angular/material/icon';
 import { PipesModule } from '../../pipes/pipes.module';
 import { MatTabsModule } from '@angular/material/tabs';
 import { ProductService } from './product.service';
+import { ModalBidComponent } from './modal-bid/modal-bid.component';
 
 @NgModule({
-  declarations: [ProductComponent],
+  declarations: [ProductComponent, ModalBidComponent],
   providers: [ProductService],
   imports: [
     CommonModule,

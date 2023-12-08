@@ -24,7 +24,7 @@ export class ExploreComponent {
   getOffers(): void {
     this._service.getOffers().subscribe({
       next: res => {
-        this.offers = res;
+        this.offers = res.data;
       },
       error: error => {
         console.log(error);

@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { ProductService } from './product.service';
 import { ActivatedRoute } from '@angular/router';
 import { ICompleteOffer } from './interfaces/product.interfaces';
+import { SnackBarService } from 'src/app/components/snackbar/snackbar.service';
 
 @Component({
   selector: 'app-product',
@@ -15,7 +16,8 @@ export class ProductComponent {
   offer : ICompleteOffer;
   constructor (
     private _service: ProductService,
-    private _route: ActivatedRoute
+    private _route: ActivatedRoute,
+    private _snackBar: SnackBarService
   ) {}
 
   ngOnInit() {
@@ -30,11 +32,12 @@ export class ProductComponent {
     this.isLoading = true;
     this._service.getProduct(this.id).subscribe({
       next: res => {
-        this.offer = res;
-        // this.isLoading = false;
+        this.offer = res.data;
+        this.isLoading = false;
       },
       error: error => {
-        // this.isLoading = false;
+        this._snackBar.open(error.error.message, 'Ok')
+        this.isLoading = false;
       }
     });
   }

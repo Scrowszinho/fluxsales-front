@@ -15,7 +15,7 @@ export class AuthService {
 
   doLogout(): void {
     this._localStorage.clearLocalStorage();
-    this._router.navigate(['/']);
+    this._router.navigate(['/login/signin']);
   }
 
   doLogin(user: IUserLoged): void {
@@ -39,7 +39,7 @@ export class AuthService {
     if(!user) {
       return false;
     }
-    return user.expires_in > new Date();
+    return new Date(user.expires_in) > new Date();
   }
 
   getExpiredDate(): Date {

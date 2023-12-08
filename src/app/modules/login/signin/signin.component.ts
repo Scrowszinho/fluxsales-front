@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { LoginService } from '../login.service';
+import { SnackBarService } from 'src/app/components/snackbar/snackbar.service';
 
 @Component({
   selector: 'app-signin',
@@ -14,6 +15,7 @@ export class SigninComponent {
   constructor (
     private _formBuilder: FormBuilder,
     private _router: Router,
+    private _snackbar: SnackBarService,
     private _service: LoginService
   ) {}
 
@@ -39,7 +41,7 @@ export class SigninComponent {
         this._router.navigate(['/']);
       },
       error: error => {
-
+        this._snackbar.open(error.error.message, 'Ok')
       }
     })
   }
