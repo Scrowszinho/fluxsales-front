@@ -1,0 +1,107 @@
+@import "../../../../assets/styles/colors.scss";
+@import "../../../../assets/styles/styles.scss";
+
+.modal-bid-component {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    &--title {
+      font-size: 24px;
+      font-weight: 600;
+      margin-bottom: 0px;
+    }
+    &--subtitle {
+      color: $default-grey-medium;
+      font-size: 12px;
+    }
+    &--close {
+      outline: 1px solid $default-grey-medium;
+      padding: 8px;
+      border-radius: 100%;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      cursor: pointer;
+      align-items: center;
+      justify-content: center;
+      .icon {
+        width: 20px;
+        height: 20px;
+        font-size: 20px;
+      }
+    }
+  }
+  &__body {
+    margin-top: 28px;
+    &--title {
+      font-size: 14px;
+      font-weight: 500;
+    }
+    &--last-bid {
+      font-size: 12px;
+      font-weight: 500;
+      margin-top: 12px;
+      color: $default-grey-medium;
+      &.flash {
+        color: $default-red;
+        font-weight: 700;
+        animation: blinker 1s linear infinite;
+      }
+    }
+    &--market-details {
+      margin-top: 48px;
+      .fees {
+        display: flex;
+        justify-content: space-between;
+
+        &-title {
+          font-size: 14px;
+          font-weight: 500;
+        }
+        &-value {
+          font-size: 18px;
+          font-weight: 700;
+        }
+        &.first {
+          border-bottom: 1px solid $default-light-grey;
+          padding-bottom: 16px;
+        }
+        &.second {
+          margin-top: 16px;
+        }
+      }
+    }
+  }
+  &__footer {
+    &--final-details {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 32px;
+      margin-bottom: 24px;
+      .title {
+        font-size: 18px;
+        font-weight: 500;
+      }
+      .value {
+        font-size: 24px;
+        font-weight: 700;
+      }
+    }
+    &--buttons {
+      .bid {
+        background-color: $default-color;
+        color: $color-white;
+      }
+      .close {
+        margin-top: 16px;
+        background-color: $color-white;
+        border: 1px solid $default-light-grey;
+        color: black;
+      }
+    }
+  }
+  
+}

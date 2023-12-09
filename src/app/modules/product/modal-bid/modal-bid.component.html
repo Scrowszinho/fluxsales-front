@@ -1,1 +1,59 @@
-<p>modal-bid works!</p>
+<div class="modal-bid-component">
+  <div class="modal-bid-component__header">
+    <div>
+      <h1 class="modal-bid-component__header--title">
+        {{ "label.Bid_now" | translate }}
+      </h1>
+      <h2 class="modal-bid-component__header--subtitle">
+        {{ "label.Placing_bid" | translate }} {{ data.product.name }} #{{
+          data.id
+        }}
+      </h2>
+    </div>
+    <div class="modal-bid-component__header--close" mat-dialog-close>
+      <mat-icon class="icon">close</mat-icon>
+    </div>
+  </div>
+  <div class="modal-bid-component__body">
+    <span class="modal-bid-component__body--title">{{
+      "label.Bid_value" | translate
+    }}</span>
+    <input-text
+      class="modal-bid-component__body--input"
+      [form]="form"
+      [type]="'number'"
+      name="bid"
+    ></input-text>
+    <span class="modal-bid-component__body--last-bid" [ngClass]="{'flash': shouldFlash}">
+        {{ 'label.Last_bid' | translate }} {{ data.last_bid| currency:"BRL" }}
+    </span>
+    <div class="modal-bid-component__body--market-details">
+      <div class="fees first">
+        <span class="fees-title">{{ "label.Service_fee" | translate }}</span>
+        <span class="fees-value">{{
+          form.get("bid").value * 0.1 | currency : "BRL"
+        }}</span>
+      </div>
+      <div class="fees second">
+        <span class="fees-title">{{ "label.Service_fee" | translate }}</span>
+        <span class="fees-value">{{
+          form.get("bid").value * 0.05 | currency : "BRL"
+        }}</span>
+      </div>
+    </div>
+  </div>
+  <div class="modal-bid-component__footer">
+    <div class="modal-bid-component__footer--final-details">
+      <span class="title">
+        {{ 'label.Total_Bid' | translate }}
+      </span>
+      <span class="value">
+        {{ getValue() | currency : "BRL" }}
+      </span>
+    </div>
+    <div class="modal-bid-component__footer--buttons">
+        <button class="default-button bid" (click)="sendBid()">{{ 'label.Bid_now' | translate }}</button>
+        <button class="default-button close" mat-dialog-close>{{ 'label.Cancel' | translate }}</button>
+    </div>
+  </div>
+</div>

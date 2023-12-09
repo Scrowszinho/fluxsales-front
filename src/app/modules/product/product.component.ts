@@ -3,6 +3,8 @@ import { ProductService } from './product.service';
 import { ActivatedRoute } from '@angular/router';
 import { ICompleteOffer } from './interfaces/product.interfaces';
 import { SnackBarService } from 'src/app/components/snackbar/snackbar.service';
+import { MatDialog } from '@angular/material/dialog'
+import { ModalBidComponent } from './modal-bid/modal-bid.component';
 
 @Component({
   selector: 'app-product',
@@ -16,14 +18,14 @@ export class ProductComponent {
   offer : ICompleteOffer;
   constructor (
     private _service: ProductService,
-    private _route: ActivatedRoute,
-    private _snackBar: SnackBarService
+    private _snackBar: SnackBarService,
+    private _matDialog: MatDialog,
+    private _route: ActivatedRoute
   ) {}
 
   ngOnInit() {
-    this._route.url.subscribe(params => {
-      console.log(params);
-      
+    this._route.params.subscribe(params => {
+      this.id = params['id'];
     });
     this.getProductOffer();
   }
@@ -40,5 +42,10 @@ export class ProductComponent {
         this.isLoading = false;
       }
     });
+  }
+
+  openBidModal(): void {
+    const dialogRef = this._matDialog.open(ModalBidComponent, { width: '400px', height: '510px', panelClass: 'default-modal', backdropClass: 'default-backdrop' });
+    dialogRef.componentInstance.data = this.offer;
   }
 }

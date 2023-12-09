@@ -20,7 +20,7 @@ export class InputTextComponent {
     @Input() preFixIcon  : string;
     @Input() suFixIcon  : string;
     @Input() typee: 'rounded-field' | 'normal' = 'rounded-field'
-    @Input() type: 'text' | 'email' | 'password' = 'text';
+    @Input() type: 'text' | 'email' | 'password' | 'number' = 'text';
 
     hasError(error){
         return this.form.hasError(error, [this.name]);

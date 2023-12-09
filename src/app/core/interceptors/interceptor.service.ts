@@ -1,11 +1,11 @@
 import { HttpEvent, HttpHandler, HttpInterceptor, HttpRequest } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { LoginService } from 'src/app/modules/login/login.service';
+import { AuthService } from '../auth/auth.service';
 
 @Injectable()
 export class AuthInterceptor implements HttpInterceptor {
-  constructor(private _loginService: LoginService) {}
+  constructor(private _authService: AuthService) {}
 
   static noAuthUrls = [
     '/login',
@@ -20,12 +20,12 @@ export class AuthInterceptor implements HttpInterceptor {
       return next.handle(req)
     }
 
-    const login = this._loginService.getLoggedUser();
-    const token = `Bearer ${login.access_token}`;
+    const login = this._authService.getUser();
+    const token = `Bearer ${login.token}`;
     
     const copyReq = req.clone({
       headers: req.headers.set('Authorization', token),
-    });
+    });    
     return next.handle(copyReq);
   }
 

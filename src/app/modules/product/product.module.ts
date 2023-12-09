@@ -9,6 +9,8 @@ import { PipesModule } from '../../pipes/pipes.module';
 import { MatTabsModule } from '@angular/material/tabs';
 import { ProductService } from './product.service';
 import { ModalBidComponent } from './modal-bid/modal-bid.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { InputsModule } from 'src/app/components/inputs/inputs.module';
 
 @NgModule({
   declarations: [ProductComponent, ModalBidComponent],
@@ -20,6 +22,8 @@ import { ModalBidComponent } from './modal-bid/modal-bid.component';
     ProductRoute,
     MatTabsModule,
     CardBaseModule,
+    MatDialogModule,
+    InputsModule,
     PipesModule,
   ],
 })

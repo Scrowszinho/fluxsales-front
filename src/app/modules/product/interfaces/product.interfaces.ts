@@ -31,3 +31,8 @@ export interface ICompleteOffer {
   };
   offer_bid: Array<IBid>;
 }
+
+export interface ISendBid {
+  offer_id: number;
+  value: number;
+}
