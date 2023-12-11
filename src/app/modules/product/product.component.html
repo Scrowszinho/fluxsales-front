@@ -70,7 +70,7 @@
               ></mat-tab>
             </mat-tab-group>
           </div>
-          <button class="button-bid" (click)="openBidModal()">{{ 'label.Bid_now' | translate }}</button>
+          <button *ngIf="_authService.isUserLogged() && isBidDisponible()" class="button-bid" (click)="openBidModal()">{{ 'label.Bid_now' | translate }}</button>
         </div>
       </div>
     </div>

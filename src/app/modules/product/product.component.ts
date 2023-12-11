@@ -5,6 +5,7 @@ import { ICompleteOffer } from './interfaces/product.interfaces';
 import { SnackBarService } from 'src/app/components/snackbar/snackbar.service';
 import { MatDialog } from '@angular/material/dialog'
 import { ModalBidComponent } from './modal-bid/modal-bid.component';
+import { AuthService } from 'src/app/core/auth/auth.service';
 
 @Component({
   selector: 'app-product',
@@ -12,13 +13,13 @@ import { ModalBidComponent } from './modal-bid/modal-bid.component';
   styleUrls: ['./product.component.scss']
 })
 export class ProductComponent {
-  date = new Date();
-  id = 4;
+  id = 0;
   isLoading = false;
   offer : ICompleteOffer;
   constructor (
     private _service: ProductService,
     private _snackBar: SnackBarService,
+    public _authService: AuthService,
     private _matDialog: MatDialog,
     private _route: ActivatedRoute
   ) {}
@@ -42,6 +43,12 @@ export class ProductComponent {
         this.isLoading = false;
       }
     });
+  }
+
+  isBidDisponible(): boolean {
+    console.log(new Date() > new Date(this.offer.start_date));
+    
+    return new Date() > this.offer.start_date;
   }
 
   openBidModal(): void {

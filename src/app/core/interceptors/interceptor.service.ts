@@ -2,20 +2,24 @@ import { HttpEvent, HttpHandler, HttpInterceptor, HttpRequest } from '@angular/c
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { AuthService } from '../auth/auth.service';
+import { LocalStorageService } from '../utils/local-storage.service';
 
 @Injectable()
 export class AuthInterceptor implements HttpInterceptor {
-  constructor(private _authService: AuthService) {}
+  constructor(private _authService: AuthService, private _localStorage: LocalStorageService) {}
 
   static noAuthUrls = [
     '/login',
     '/signup',
+    '/offers'
   ]
 
   intercept(
     req: HttpRequest<any>,
     next: HttpHandler
   ): Observable<HttpEvent<unknown>> {    
+
+    if(!this._authService.isUserLogged()) this._localStorage.clearLocalStorage();
     if (!this.needAuthToUrl(req)) {      
       return next.handle(req)
     }
