@@ -19,9 +19,9 @@ export class ProductComponent {
   constructor (
     private _service: ProductService,
     private _snackBar: SnackBarService,
-    public _authService: AuthService,
     private _matDialog: MatDialog,
-    private _route: ActivatedRoute
+    private _route: ActivatedRoute,
+    public authService: AuthService
   ) {}
 
   ngOnInit() {
@@ -45,10 +45,8 @@ export class ProductComponent {
     });
   }
 
-  isBidDisponible(): boolean {
-    console.log(new Date() > new Date(this.offer.start_date));
-    
-    return new Date() > this.offer.start_date;
+  isBidDisponible(): boolean {    
+    return new Date() > new Date(this.offer.start_date);
   }
 
   openBidModal(): void {

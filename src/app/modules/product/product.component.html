@@ -1,5 +1,5 @@
 <card-base>
-  <div class="app-product" [ngClass]="{'loading-class': isLoading}">
+  <div class="app-product" [ngClass]="{ 'loading-class': isLoading }">
     <div class="app-product__details row" *ngIf="!isLoading">
       <div class="app-product__images">
         <div class="app-product__images--image-area">
@@ -21,7 +21,10 @@
         <div class="app-product__body--title">
           <app-title [title]="offer.product.name"></app-title>
           <div class="subtitle">
-            <span class="text">{{ (!offer.product.final_value ? "label.Last_bid" : "label.Salle_by") | translate }}</span>
+            <span class="text">{{
+              (!offer.product.final_value ? "label.Last_bid" : "label.Salle_by")
+                | translate
+            }}</span>
             <b class="value">{{ offer.last_bid | currency : "BRL" }}</b>
           </div>
         </div>
@@ -38,7 +41,7 @@
                 <div class="icon">
                   <mat-icon class="detail--icon">today</mat-icon>
                 </div>
-                <h2 class="detail--value">{{ offer.end_date| date }}</h2>
+                <h2 class="detail--value">{{ offer.end_date | date }}</h2>
               </div>
             </div>
             <div class="detail">
@@ -47,7 +50,9 @@
                 <div class="icon">
                   <mat-icon class="detail--icon">toll</mat-icon>
                 </div>
-                <h2 class="detail--value">{{ offer.value_interval| currency : "BRL" }}</h2>
+                <h2 class="detail--value">
+                  {{ offer.value_interval | currency : "BRL" }}
+                </h2>
               </div>
             </div>
           </div>
@@ -70,12 +75,27 @@
               ></mat-tab>
             </mat-tab-group>
           </div>
-          <button *ngIf="_authService.isUserLogged() && isBidDisponible()" class="button-bid" (click)="openBidModal()">{{ 'label.Bid_now' | translate }}</button>
+          <ng-container
+            *ngIf="
+              authService.isUserLogged() && isBidDisponible();
+              then thenBlock;
+              else elseBlock
+            "
+          >
+          </ng-container>
+          <ng-template #thenBlock
+            ><button class="button-bid" (click)="openBidModal()">
+              {{ "label.Bid_now" | translate }}
+            </button></ng-template
+          >
+          <ng-template #elseBlock
+            ><button class="button-bid">
+              teste
+            </button></ng-template
+          >
         </div>
       </div>
     </div>
-    <div class="app-product__table" *ngIf="!isLoading">
-      
-    </div>
+    <div class="app-product__table" *ngIf="!isLoading"></div>
   </div>
 </card-base>

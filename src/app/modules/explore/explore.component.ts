@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ExploreService } from './explore.service';
 import { IExploreOffers } from './interfaces/explore.interfaces';
+import { SnackBarService } from 'src/app/components/snackbar/snackbar.service';
 
 @Component({
   selector: 'app-explore',
@@ -12,7 +13,8 @@ export class ExploreComponent {
   offers: IExploreOffers[] = [];
 
   constructor(
-    private _service: ExploreService
+    private _service: ExploreService,
+    private _snackBar: SnackBarService
    ) {
 
   }
@@ -27,8 +29,7 @@ export class ExploreComponent {
         this.offers = res.data;
       },
       error: error => {
-        console.log(error);
-        
+        this._snackBar.open(error.error.message, 'Ok')  
       }
     })
   }
