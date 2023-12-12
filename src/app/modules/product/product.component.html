@@ -75,24 +75,42 @@
               ></mat-tab>
             </mat-tab-group>
           </div>
-          <ng-container
-            *ngIf="
-              authService.isUserLogged() && isBidDisponible();
-              then thenBlock;
-              else elseBlock
-            "
+          <ng-container *ngIf="isBidTimePassOut();then thenPassOut; else elsePassOut ">
+          </ng-container>
+          <ng-template #thenPassOut>
+            <div class="button-bid center">
+              {{ 'label.Bid_pass_out_message' | translate }}
+            </div> 
+          </ng-template>
+          <ng-template #elsePassOut>
+            <ng-container
+            *ngIf="isBidDisponible(); then thenBlock; else elseBlock"
           >
           </ng-container>
           <ng-template #thenBlock
             ><button class="button-bid" (click)="openBidModal()">
-              {{ "label.Bid_now" | translate }}
+              <ng-container
+                *ngIf="
+                  authService.isUserLogged();
+                  then thenBlockText;
+                  else elseBlockText
+                "
+              >
+              </ng-container>
+              <ng-template #thenBlockText>{{
+                "label.Bid_now" | translate
+              }}</ng-template>
+              <ng-template #elseBlockText>{{
+                "label.Login_to_bid" | translate
+              }}</ng-template>
             </button></ng-template
           >
           <ng-template #elseBlock
             ><button class="button-bid">
-              teste
-            </button></ng-template
-          >
+              {{ "" | translate }}
+              <countdown [config]="{ leftTime: timer }"></countdown></button
+          ></ng-template>
+          </ng-template>
         </div>
       </div>
     </div>

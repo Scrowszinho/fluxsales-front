@@ -16,6 +16,7 @@ export class ProductComponent {
   id = 0;
   isLoading = false;
   offer : ICompleteOffer;
+  timer = 0;
   constructor (
     private _service: ProductService,
     private _snackBar: SnackBarService,
@@ -37,6 +38,9 @@ export class ProductComponent {
       next: res => {
         this.offer = res.data;
         this.isLoading = false;
+        console.log();
+        
+        this.timer = (new Date(res.data.start_date).getTime() - new Date().getTime()) / 1000;
       },
       error: error => {
         this._snackBar.open(error.error.message, 'Ok')
@@ -49,7 +53,14 @@ export class ProductComponent {
     return new Date() > new Date(this.offer.start_date);
   }
 
+  isBidTimePassOut(): boolean {
+    console.log(new Date() > new Date(this.offer.end_date));
+    
+    return new Date() > new Date(this.offer.end_date);
+  }
+
   openBidModal(): void {
+    if(!this.authService.isUserLogged()) return;
     const dialogRef = this._matDialog.open(ModalBidComponent, { width: '400px', height: '510px', panelClass: 'default-modal', backdropClass: 'default-backdrop' });
     dialogRef.componentInstance.data = this.offer;
   }

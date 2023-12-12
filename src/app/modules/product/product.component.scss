@@ -139,6 +139,9 @@
         width: 100%;
         background-color: #e5dbfe;
         border-radius: 40px;
+        &.center {
+          text-align: center;
+        }
       }
     }
   }

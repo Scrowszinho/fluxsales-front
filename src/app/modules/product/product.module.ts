@@ -11,6 +11,7 @@ import { ProductService } from './product.service';
 import { ModalBidComponent } from './modal-bid/modal-bid.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { InputsModule } from 'src/app/components/inputs/inputs.module';
+import { CountdownModule } from 'ngx-countdown';
 
 @NgModule({
   declarations: [ProductComponent, ModalBidComponent],
@@ -20,6 +21,7 @@ import { InputsModule } from 'src/app/components/inputs/inputs.module';
     TitleModule,
     MatIconModule,
     ProductRoute,
+    CountdownModule,
     MatTabsModule,
     CardBaseModule,
     MatDialogModule,

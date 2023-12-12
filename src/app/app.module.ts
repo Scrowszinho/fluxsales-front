@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { LOCALE_ID, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -13,6 +13,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { provideEnvironmentNgxMask } from 'ngx-mask';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { InterceptorModule } from './core/interceptors/interceptor.module';
+import { registerLocaleData } from '@angular/common';
+import localeBr from '@angular/common/locales/pt';
+registerLocaleData(localeBr, 'pt')
 
 @NgModule({
   declarations: [AppComponent],
@@ -33,6 +36,7 @@ import { InterceptorModule } from './core/interceptors/interceptor.module';
   ],
   providers: [
     provideEnvironmentNgxMask(),
+    { provide: LOCALE_ID, useValue: 'pt' }
   ],
   bootstrap: [AppComponent],
 })
