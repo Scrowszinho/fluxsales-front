@@ -47,6 +47,7 @@
       </a>
     </div>
     <div class="user-details" *ngIf="shouldOpenDetails">
+      <span class="item" (click)="routeTo('profile')">{{ "label.Profile" | translate }}</span>
       <span class="item" (click)="logout()">{{ "label.Exit" | translate }}</span>
     </div>
   </div>
