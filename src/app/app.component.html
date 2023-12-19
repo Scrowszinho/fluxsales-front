@@ -1,7 +1,8 @@
 <div class="app-container">
     <app-header #header *ngIf="routeUtil.shouldEnableHeader()"></app-header>
     <a (click)="closeMenu()">
-        <div class="main-content">
+        <div class="main-content" [ngClass]="{'profile-area': routeUtil.shouldEnableProfileSidebar()}">
+            <app-profile-sidebar *ngIf="routeUtil.shouldEnableProfileSidebar()"></app-profile-sidebar>
             <router-outlet></router-outlet>
         </div>
     </a>

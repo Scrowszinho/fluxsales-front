@@ -29,6 +29,7 @@ export class HeaderComponent {
   }
 
   routeTo(route: string): void {
+    this.shouldOpenDetails = false;
     this.router.navigate([`${route}`]);
   }
 

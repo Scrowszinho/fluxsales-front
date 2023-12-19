@@ -15,6 +15,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { InterceptorModule } from './core/interceptors/interceptor.module';
 import { registerLocaleData } from '@angular/common';
 import localeBr from '@angular/common/locales/pt';
+import { ProfileSidebarComponent } from './components/profile-sidebar/profile-sidebar.component';
 registerLocaleData(localeBr, 'pt')
 
 @NgModule({
@@ -27,6 +28,7 @@ registerLocaleData(localeBr, 'pt')
     FormsModule,
     ReactiveFormsModule,
     AppRoutingModule,
+    ProfileSidebarComponent,
     MatSnackBarModule,
     InterceptorModule,
     FooterModule,

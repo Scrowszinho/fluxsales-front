@@ -23,4 +23,10 @@ export class RouteUtilsService {
         });
         return enable
     }
+
+    shouldEnableProfileSidebar(): boolean {
+        let enable = false;
+        if( this.route.url.includes('/profile') ) enable = true;
+        return enable
+    }
 }
