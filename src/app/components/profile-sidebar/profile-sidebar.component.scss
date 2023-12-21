@@ -1,0 +1,35 @@
+@import "../../../assets/styles/colors.scss";
+@import "../../../assets/styles/fonts.scss";
+@import "../../../assets/styles/styles.scss";
+
+.profile-sidebar {
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
+    &__title {
+        font-size: $default-text-m;
+        color: $default-grey-medium;
+        font-weight: 500;
+        margin: 20px 0px 60px 0px;
+        padding: 16px;
+    }
+    &__subtitle {
+        display: flex;
+        padding: 16px;
+        align-items: center;
+        cursor: pointer;
+        color:  $default-grey-medium;
+        &--text {
+            font-weight: 800;
+            font-size: $default-text-xp;
+        }
+        &--icon {
+            margin-right: 18px;
+        }
+        &.active {
+            background-color: $selected-grey;
+            border-radius: 30px;
+            color: black;
+        }
+    }
+}

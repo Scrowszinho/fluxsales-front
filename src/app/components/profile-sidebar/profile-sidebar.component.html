@@ -1,1 +1,13 @@
-<p>profile-sidebar works!</p>
+<aside class="profile-sidebar">
+    <a class="profile-sidebar__title">
+        Teste
+    </a>
+    <a class="profile-sidebar__subtitle" [ngClass]="{'active' : true}">
+        <mat-icon class="profile-sidebar__subtitle--icon">security</mat-icon>
+        <span class="profile-sidebar__subtitle--text">{{ 'label.Security' | translate }}</span>
+    </a>
+    <a class="profile-sidebar__subtitle" [ngClass]="{'active' : false}">
+        <mat-icon class="profile-sidebar__subtitle--icon">account_circle</mat-icon>
+        <span class="profile-sidebar__subtitle--text">{{ 'label.Account_details' | translate }}</span>
+    </a>
+</aside>
