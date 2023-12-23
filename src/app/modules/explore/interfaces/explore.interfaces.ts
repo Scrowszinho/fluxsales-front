@@ -6,3 +6,15 @@ export interface IExploreOffers {
   product_name: string;
   bids: number;
 }
+
+export interface IExploreFilter {
+  finished_bids: boolean,
+  date: string
+}
+
+export class ExploreFilter {
+  constructor (
+    public finished_bids: boolean = false,
+    public date: string = ''
+  ) {}
+}

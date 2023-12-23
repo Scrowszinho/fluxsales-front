@@ -7,6 +7,7 @@ import { CardModule } from '../../components/card/card.module';
 import { PipesModule } from '../../pipes/pipes.module';
 import { ExploreRoute } from './explore.routing';
 import { ExploreService } from './explore.service';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   declarations: [ExploreComponent],
@@ -14,6 +15,7 @@ import { ExploreService } from './explore.service';
   imports: [
     CommonModule,
     CardBaseModule,
+    MatIconModule,
     ExploreRoute,
     TitleModule,
     CardModule,
