@@ -33,7 +33,6 @@ export class ExploreComponent {
 
   activeFilter(key: string): void {
     this.filters[key] = !this.filters[key];
-    console.log(this.filters);
   }
 
   changeDate(): void {

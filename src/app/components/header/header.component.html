@@ -9,10 +9,10 @@
       <a (click)="routeTo('')" class="link-area">
         {{ "label.Explore" | translate }}
       </a>
-      <a href="" class="link-area">
+      <a *ngIf="authService.isUserLogged()" class="link-area">
         {{ "label.Status" | translate }}
       </a>
-      <a href="" class="link-area">
+      <a *ngIf="authService.isUserLogged()" class="link-area">
         {{ "label.Activy" | translate }}
       </a>
       <a
