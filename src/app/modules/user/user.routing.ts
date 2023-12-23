@@ -6,7 +6,7 @@ import { SettingsComponent } from './settings/settings.component';
 @NgModule({
   imports: [
     RouterModule.forChild([
-      {path: '', pathMatch: 'full', redirectTo: 'profile'},
+      {path: '', pathMatch: 'full', redirectTo: 'my-profile'},
       { path: 'my-profile', component: ProfileComponent },
       { path: 'settings', component: SettingsComponent },
     ]),

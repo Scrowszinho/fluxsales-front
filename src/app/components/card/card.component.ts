@@ -14,6 +14,6 @@ export class CardComponent {
   constructor(private _route: Router) {}
 
   goToProduct(id: number): void {
-    this._route.navigate(['/product/' + id]);
+    this._route.navigate(['/product/see/' + id]);
   }
 }

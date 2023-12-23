@@ -23,6 +23,13 @@
         {{ "label.Enter" | translate }}
       </a>
       <a
+      class="link-area activate"
+      *ngIf="authService.isUserLogged()"
+      (click)="routeTo('product/new-product')"
+    >
+      {{ "label.Create_Product" | translate }}
+    </a>
+      <a
       *ngIf="!authService.isUserLogged()"
         (click)="routeTo('login/signout')"
         class="link-area activate-out"

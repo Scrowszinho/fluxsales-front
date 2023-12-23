@@ -6,7 +6,8 @@ import { NewProductComponent } from './new-product/new-product.component';
 @NgModule({
   imports: [
     RouterModule.forChild([
-      { path: '', component: ProductComponent },
+      {path: '', pathMatch: 'full', redirectTo: 'new-product'},
+      { path: 'see/:id', component: ProductComponent},
       { path: 'new-product', component: NewProductComponent }
     ]),
   ],
