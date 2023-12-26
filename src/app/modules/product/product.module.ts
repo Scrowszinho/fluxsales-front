@@ -12,10 +12,17 @@ import { ModalBidComponent } from './modal-bid/modal-bid.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { InputsModule } from 'src/app/components/inputs/inputs.module';
 import { CountdownModule } from 'ngx-countdown';
+import { NewProductComponent } from './new-product/new-product.component';
 
 @NgModule({
-  declarations: [ProductComponent, ModalBidComponent],
-  providers: [ProductService],
+  declarations: [
+    ProductComponent, 
+    ModalBidComponent,
+    NewProductComponent
+  ],
+  providers: [
+    ProductService
+  ],
   imports: [
     CommonModule,
     TitleModule,
