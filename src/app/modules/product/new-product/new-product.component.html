@@ -1,10 +1,46 @@
 <div class="app-new-product">
-    <div class="app-new-product__aside">
-        <app-title [size]="'34px'" [title]="'label.New_product' | translate"></app-title>
-        <div class="app-new-product__aside--first-step">
-            <h1 class="title">{{ 'label.New_product_subtitle' | translate }}</h1>
-            <h2 class="subtitle">{{ 'label.Product_subtitle_new' | translate }}</h2>
+  <div class="app-new-product__aside">
+    <app-title
+      [size]="'34px'"
+      [title]="'label.New_product' | translate"
+    ></app-title>
+    <div class="app-new-product__aside--title">
+      <h1 class="title">{{ "label.New_product_subtitle" | translate }}</h1>
+      <h2 class="subtitle">{{ "label.Product_subtitle_new" | translate }}</h2>
+    </div>
+    <div class="app-new-product__aside--form">
+      <input-text
+        [label]="'label.Product_name' | translate"
+        [form]="form"
+        name="name"
+      ></input-text>
+      <app-textbox
+        [placeholder]="'label.Description' | translate"
+        [label]="'label.Description' | translate"
+        [form]="form"
+        name="description"
+      ></app-textbox>
+      <input-text
+        [label]="'label.Weight' | translate"
+        [form]="form"
+        name="weight"
+        type="number"
+        mask="000.000"
+      ></input-text>
+      <input-text
+        [label]="'label.Value' | translate"
+        [form]="form"
+        name="value"
+        type="number"
+      ></input-text>
+    </div>
+    <div class="app-new-product__aside--button">
+        <div class="button-area">
+            <button (click)="createProduct()" [ngClass]="form.valid ? 'default-button' : 'default-unselected-button'">
+                <span>{{ (form.valid ? 'label.Create_Product' : 'label.Missing_informations') | translate }}</span>
+            </button>
         </div>
     </div>
-    <div class="app-new-product__preview"></div>
+  </div>
+  <div class="app-new-product__preview"></div>
 </div>

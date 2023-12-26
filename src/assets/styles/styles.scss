@@ -1,3 +1,5 @@
+@import "./colors.scss";
+
 .button-white {
   background-color: white;
   border: none;
@@ -53,4 +55,28 @@
   50% {
     opacity: 0;
   }
+}
+
+.default-button {
+  border: 1px solid $default-color;
+  border-radius: 25px;
+  cursor: pointer;
+  padding: 10px 14px;
+  background-color: $default-color;
+  color: $default-white;
+  transition: 0.2s ease-in;
+  font-weight: 800;
+  width: 100%;
+}
+
+.default-unselected-button {
+  border-radius: 25px;
+  cursor: pointer;
+  padding: 10px 14px;
+  width: 100%;
+  transition: 0.2s ease-in-out;
+  color: $default-color;
+  border: 1px solid $default-color;
+  background-color: transparent;
+  font-weight: 800;
 }

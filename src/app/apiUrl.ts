@@ -9,6 +9,9 @@ export const apiUrl = {
   offers: {
     completeOffer: '/offers/complete-offer/',
   },
+  product: {
+    newProduct: '/products'
+  },
   bids: {
     sendBid: '/bids',
   },

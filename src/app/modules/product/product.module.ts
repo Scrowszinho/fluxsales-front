@@ -13,27 +13,29 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { InputsModule } from 'src/app/components/inputs/inputs.module';
 import { CountdownModule } from 'ngx-countdown';
 import { NewProductComponent } from './new-product/new-product.component';
+import { TextboxComponent } from "../../components/textbox/textbox.component";
 
 @NgModule({
-  declarations: [
-    ProductComponent, 
-    ModalBidComponent,
-    NewProductComponent
-  ],
-  providers: [
-    ProductService
-  ],
-  imports: [
-    CommonModule,
-    TitleModule,
-    MatIconModule,
-    ProductRoute,
-    CountdownModule,
-    MatTabsModule,
-    CardBaseModule,
-    MatDialogModule,
-    InputsModule,
-    PipesModule,
-  ],
+    declarations: [
+        ProductComponent,
+        ModalBidComponent,
+        NewProductComponent
+    ],
+    providers: [
+        ProductService
+    ],
+    imports: [
+        CommonModule,
+        TitleModule,
+        MatIconModule,
+        ProductRoute,
+        CountdownModule,
+        MatTabsModule,
+        CardBaseModule,
+        MatDialogModule,
+        InputsModule,
+        PipesModule,
+        TextboxComponent
+    ]
 })
 export class ProductModule {}

@@ -1,0 +1,19 @@
+<form
+  class="default-input"
+  [formGroup]="form"
+  #field
+  [ngClass]="{'rounded-field': typee === 'rounded-field' }"
+  style="width: 100%"
+>
+  <mat-label class="input-label" *ngIf="label">{{ label }}</mat-label>
+  <div class="input-area">
+    <textarea
+      class="input"
+      [placeholder]="placeholder"
+      rows="4"
+      [formControlName]="name"
+      [readonly]="readonly"
+      [value]="form[name]?.value"
+    > </textarea>
+  </div>
+</form>

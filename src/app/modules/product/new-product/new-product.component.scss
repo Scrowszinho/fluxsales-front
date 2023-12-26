@@ -3,27 +3,43 @@
 @import "../../../../assets/styles/fonts.scss";
 
 .app-new-product {
-    display: flex;
-    padding: 16px;
-    width: 100%;
-    height: 100%;
-    &__aside {
-        flex-basis: 70%;
-        &--first-step {
-            .title {
-                font-size: $default-text-m;
-                font-weight: 700;
-                margin-bottom: 0px;
-            }
-            .subtitle {
-                font-size: $default-text-p;
-                color: $default-grey-medium;
-                font-weight: 500;
-                margin-bottom: 24px;
-            }
-        }
+  display: flex;
+  padding: 16px;
+  width: 100%;
+  height: 100%;
+  &__aside {
+    flex-basis: 70%;
+    &--title {
+      .title {
+        font-size: $default-text-m;
+        font-weight: 700;
+        margin-bottom: 0px;
+      }
+      .subtitle {
+        font-size: $default-text-p;
+        color: $default-grey-medium;
+        font-weight: 500;
+        margin-bottom: 24px;
+      }
     }
-    &__preview {
-        flex-basis: 30%;
+    &--form {
+      width: 740px;
+      height: 500px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
     }
+    &--button {
+      display: flex;
+      width: 740px;
+      flex-direction: row-reverse;
+      margin-top: 24px;
+      .button-area  {
+        width: 200px;
+      }
+    }
+  }
+  &__preview {
+    flex-basis: 30%;
+  }
 }

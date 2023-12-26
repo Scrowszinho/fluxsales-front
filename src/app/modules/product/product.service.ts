@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { IBid, ICompleteOffer, ISendBid } from './interfaces/product.interfaces';
+import { IBid, ICompleteOffer, INewProduct, ISendBid } from './interfaces/product.interfaces';
 import { environment } from 'src/environments/environment';
 import { apiUrl } from 'src/app/apiUrl';
 import { Observable } from 'rxjs';
@@ -16,6 +16,11 @@ export class ProductService {
   getProduct(id: number): Observable<IDefaultRequest<ICompleteOffer>> {
     const url =  environment.apiUrl + apiUrl.offers.completeOffer + id;
     return this._http.get<IDefaultRequest<ICompleteOffer>>(url);
+  }
+
+  createProduct(data: INewProduct): Observable<IDefaultRequest<INewProduct>> {
+    const url =  environment.apiUrl + apiUrl.product.newProduct;
+    return this._http.post<IDefaultRequest<INewProduct>>(url, data);
   }
 
   makeABid(data: ISendBid): Observable<IDefaultRequest<IBid>> {

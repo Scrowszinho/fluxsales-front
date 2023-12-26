@@ -3,19 +3,10 @@
 .app-footer {
     padding: 16px 44px;
     background-color: $default-grey;
+    color: $default-grey-medium;
     &__info-container {
-        display: grid;
-        grid-template-columns: repeat(6, 1fr);
-        .item {
-            &.first {
-                grid-area: 1 / 1 / 2 / 3;
-            }
-            &.last {
-                grid-area: 1 / 5 / 2 / 7;
-            }
-            &--title {
-                font: normal normal 600 16px/16px "Inclusive Sans";
-            }
-        }
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 }

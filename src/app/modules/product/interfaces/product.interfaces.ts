@@ -36,3 +36,10 @@ export interface ISendBid {
   offer_id: number;
   value: number;
 }
+
+export interface INewProduct {
+  name: string,
+  weight: number,
+  description: string,
+  value: number
+}
