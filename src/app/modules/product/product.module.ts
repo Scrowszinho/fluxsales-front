@@ -14,6 +14,7 @@ import { InputsModule } from 'src/app/components/inputs/inputs.module';
 import { CountdownModule } from 'ngx-countdown';
 import { NewProductComponent } from './new-product/new-product.component';
 import { TextboxComponent } from "../../components/textbox/textbox.component";
+import { CardModule } from "../../components/card/card.module";
 
 @NgModule({
     declarations: [
@@ -35,7 +36,8 @@ import { TextboxComponent } from "../../components/textbox/textbox.component";
         MatDialogModule,
         InputsModule,
         PipesModule,
-        TextboxComponent
+        TextboxComponent,
+        CardModule
     ]
 })
 export class ProductModule {}

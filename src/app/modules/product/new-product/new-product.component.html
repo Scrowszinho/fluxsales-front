@@ -12,6 +12,7 @@
       <input-text
         [label]="'label.Product_name' | translate"
         [form]="form"
+        (onChange)="previewCard()"
         name="name"
       ></input-text>
       <app-textbox
@@ -42,5 +43,11 @@
         </div>
     </div>
   </div>
-  <div class="app-new-product__preview"></div>
+  <div class="app-new-product__preview">
+    <app-title
+    [size]="'28px'"
+    [title]="'label.Product_Preview' | translate"
+  ></app-title>
+    <app-card [isDisable]="true" [offer]="preview"></app-card>
+  </div>
 </div>

@@ -7,6 +7,7 @@ import { INewProduct } from '../interfaces/product.interfaces';
 import { SnackBarService } from 'src/app/components/snackbar/snackbar.service';
 import { getMessage } from 'src/app/locale/messages';
 import { Router } from '@angular/router';
+import { IExploreOffers } from '../../explore/interfaces/explore.interfaces';
 
 @Component({
   selector: 'app-new-product',
@@ -15,6 +16,14 @@ import { Router } from '@angular/router';
 })
 export class NewProductComponent {
   form!: FormGroup;
+  preview:IExploreOffers = {
+    bids: 23,
+    end_date: new Date(),
+    start_date: new Date(),
+    id: 0,
+    last_bid: 100,
+    product_name: ''
+  }
   constructor(
     private _formBuilder: FormBuilder,
     private _snackBar: SnackBarService,
@@ -24,6 +33,17 @@ export class NewProductComponent {
 
   ngOnInit() {
     this.buildForm();
+  }
+
+  previewCard(): void {
+    this.preview = {
+      bids: 23,
+      end_date: new Date(),
+      start_date: new Date(),
+      id: 0,
+      last_bid: 100,
+      product_name: this.form.controls['name']?.value
+    }
   }
 
   buildForm(): void {

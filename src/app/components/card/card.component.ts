@@ -10,10 +10,12 @@ import { IExploreOffers } from 'src/app/modules/explore/interfaces/explore.inter
 export class CardComponent {
 
   @Input() offer : IExploreOffers;
+  @Input() isDisable : boolean = false;
 
   constructor(private _route: Router) {}
 
   goToProduct(id: number): void {
+    if(this.isDisable) return;
     this._route.navigate(['/product/see/' + id]);
   }
 }

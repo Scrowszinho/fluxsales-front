@@ -15,6 +15,7 @@
       class="input"
       [placeholder]="placeholder"
       [formControlName]="name"
+      (change)="onInputChange($event)"
       [readonly]="readonly"
       [type]="type"
       [mask]="mask"

@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { MatFormFieldAppearance } from '@angular/material/form-field';
 
@@ -21,9 +21,12 @@ export class InputTextComponent {
     @Input() suFixIcon  : string;
     @Input() typee: 'rounded-field' | 'normal' = 'rounded-field'
     @Input() type: 'text' | 'email' | 'password' | 'number' = 'text';
-
+    @Output() onChange: EventEmitter<any> = new EventEmitter();
     hasError(error){
         return this.form.hasError(error, [this.name]);
+    }
+    onInputChange(value: any): void {
+      this.onChange.emit(value);    
     }
 
 }
