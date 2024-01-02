@@ -15,11 +15,13 @@ import { CountdownModule } from 'ngx-countdown';
 import { NewProductComponent } from './new-product/new-product.component';
 import { TextboxComponent } from "../../components/textbox/textbox.component";
 import { CardModule } from "../../components/card/card.module";
+import { MyProductsComponent } from './my-products/my-products.component';
 
 @NgModule({
     declarations: [
         ProductComponent,
         ModalBidComponent,
+        MyProductsComponent,
         NewProductComponent
     ],
     providers: [
