@@ -38,7 +38,6 @@ export class ProductComponent {
       next: res => {
         this.offer = res.data;
         this.isLoading = false;
-        console.log();
         
         this.timer = (new Date(res.data.start_date).getTime() - new Date().getTime()) / 1000;
       },
@@ -53,9 +52,7 @@ export class ProductComponent {
     return new Date() > new Date(this.offer.start_date);
   }
 
-  isBidTimePassOut(): boolean {
-    console.log(new Date() > new Date(this.offer.end_date));
-    
+  isBidTimePassOut(): boolean {    
     return new Date() > new Date(this.offer.end_date);
   }
 
